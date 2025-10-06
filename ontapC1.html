@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ôn tập CSI104 - Chương 1 (v2)</title>
+    <title>Ôn tập CSI104 - Chương 1 (Bản Đầy Đủ)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
@@ -272,8 +272,9 @@
                 }
             };
 
-            // --- NGÂN HÀNG 100 CÂU HỎI SONG NGỮ ---
+            // --- NGÂN HÀNG 100 CÂU HỎI SONG NGỮ (BẢN ĐẦY ĐỦ) ---
             const allQuestions = [
+                // Phần 1: Mô hình Turing (10 câu)
                 {
                     question_vi: "Theo Alan Turing, một máy tính về cơ bản là một...?",
                     options_vi: ["Máy tính toán cơ học", "Bộ xử lý dữ liệu có thể lập trình được (Programmable data processor)", "Thiết bị lưu trữ bộ nhớ", "Hệ thống thực thi tuần tự"],
@@ -295,6 +296,87 @@
                     tip_en: "The 'program' is what instructs the computer on what to do with the input data."
                 },
                 {
+                    question_vi: "Theo mô hình Turing, đầu ra (output) của một máy tính phụ thuộc vào sự kết hợp của những yếu tố nào?",
+                    options_vi: ["Chỉ chương trình", "Chỉ dữ liệu đầu vào", "Dữ liệu đầu vào và chương trình", "Tốc độ xử lý và bộ nhớ"],
+                    answer_vi: "Dữ liệu đầu vào và chương trình",
+                    tip_vi: "Công thức cơ bản của Turing: Input + Program = Output.",
+                    question_en: "According to the Turing model, the output of a computer depends on the combination of which factors?",
+                    options_en: ["Program only", "Input data only", "Input data and program", "Processing speed and memory"],
+                    answer_en: "Input data and program",
+                    tip_en: "Turing's basic formula: Input + Program = Output."
+                },
+                {
+                    question_vi: "Nếu bạn giữ nguyên chương trình nhưng thay đổi dữ liệu đầu vào, kết quả đầu ra sẽ như thế nào theo mô hình Turing?",
+                    options_vi: ["Luôn giống nhau", "Sẽ khác nhau", "Không thể xác định", "Sẽ gây ra lỗi"],
+                    answer_vi: "Sẽ khác nhau",
+                    tip_vi: "Ví dụ: Chương trình máy tính Casio, nhập 2+2 ra 4, nhập 3+3 ra 6. Cùng chương trình, input khác nhau -> output khác nhau.",
+                    question_en: "If you keep the program the same but change the input data, what will happen to the output according to the Turing model?",
+                    options_en: ["Always the same", "It will be different", "Cannot be determined", "It will cause an error"],
+                    answer_en: "It will be different",
+                    tip_en: "Example: With a calculator program, inputting 2+2 gives 4. Inputting 3+3 gives 6. Same program, different input -> different output."
+                },
+                {
+                    question_vi: "Nếu bạn giữ nguyên dữ liệu đầu vào nhưng sử dụng các chương trình khác nhau (ví dụ: một chương trình sắp xếp, một chương trình tính tổng), kết quả đầu ra sẽ như thế nào?",
+                    options_vi: ["Luôn giống nhau", "Sẽ khác nhau", "Phụ thuộc vào phần cứng", "Sẽ luôn là một chuỗi số"],
+                    answer_vi: "Sẽ khác nhau",
+                    tip_vi: "Ví dụ: Cùng một danh sách số, chương trình sắp xếp sẽ cho ra danh sách đã sắp xếp, chương trình tính tổng sẽ cho ra một con số.",
+                    question_en: "If you keep the input data the same but use different programs (e.g., a sorting program, a summation program), what will happen to the output?",
+                    options_en: ["Always the same", "It will be different", "Depends on the hardware", "It will always be a sequence of numbers"],
+                    answer_en: "It will be different",
+                    tip_en: "Example: With the same list of numbers, a sorting program gives a sorted list, while a summation program gives a single number."
+                },
+                {
+                    question_vi: "Khái niệm 'Máy Turing Phổ dụng' (Universal Turing Machine) mô tả điều gì?",
+                    options_vi: ["Một máy tính chỉ có thể thực hiện một nhiệm vụ duy nhất.", "Một máy tính có thể thực hiện bất kỳ phép tính toán nào nếu được cung cấp chương trình phù hợp.", "Máy tính đầu tiên được chế tạo.", "Một máy tính không cần chương trình."],
+                    answer_vi: "Một máy tính có thể thực hiện bất kỳ phép tính toán nào nếu được cung cấp chương trình phù hợp.",
+                    tip_vi: "'Phổ dụng' (Universal) ám chỉ khả năng làm được mọi thứ (có thể tính toán được) miễn là có chương trình đúng.",
+                    question_en: "What does the concept of a 'Universal Turing Machine' describe?",
+                    options_en: ["A computer that can only perform a single task.", "A computer that can perform any computable task if given the right program.", "The first computer ever built.", "A computer that does not need a program."],
+                    answer_en: "A computer that can perform any computable task if given the right program.",
+                    tip_en: "'Universal' implies the ability to do anything (that is computable) as long as it has the correct program."
+                },
+                {
+                    question_vi: "Mô hình Turing tập trung nhiều hơn vào khía cạnh nào của tính toán?",
+                    options_vi: ["Xây dựng phần cứng vật lý", "Định nghĩa triết học và toán học về tính toán", "Tối ưu hóa tốc độ xử lý", "Thiết kế hệ điều hành"],
+                    answer_vi: "Định nghĩa triết học và toán học về tính toán",
+                    tip_vi: "Mô hình Turing là một mô hình lý thuyết, trả lời câu hỏi 'Tính toán là gì?' chứ không phải 'Làm thế nào để xây dựng một máy tính?'.",
+                    question_en: "The Turing model focuses more on which aspect of computation?",
+                    options_en: ["Building physical hardware", "The philosophical and mathematical definition of computation", "Optimizing processing speed", "Designing operating systems"],
+                    answer_en: "The philosophical and mathematical definition of computation",
+                    tip_en: "The Turing model is theoretical, answering 'What is computation?' rather than 'How to build a computer?'."
+                },
+                {
+                    question_vi: "Một máy tính tiền trong siêu thị được thiết kế chỉ để tính tổng và in hóa đơn là một ví dụ về...?",
+                    options_vi: ["Máy Turing Phổ dụng", "Máy tính đa năng (General-purpose machine)", "Máy tính chuyên dụng (Specific-purpose machine)", "Máy tính Von Neumann"],
+                    answer_vi: "Máy tính chuyên dụng (Specific-purpose machine)",
+                    tip_vi: "'Chuyên dụng' có nghĩa là nó chỉ được thiết kế để làm một việc cụ thể, không thể cài thêm chương trình khác.",
+                    question_en: "A cash register in a supermarket designed only to calculate totals and print receipts is an example of a...?",
+                    options_en: ["Universal Turing Machine", "General-purpose machine", "Specific-purpose machine", "Von Neumann machine"],
+                    answer_en: "Specific-purpose machine",
+                    tip_en: "'Specific-purpose' means it is designed to do only one specific job and cannot be reprogrammed for other tasks."
+                },
+                {
+                    question_vi: "Ý tưởng cơ bản nhất của máy tính theo mô hình Turing là gì?",
+                    options_vi: ["Lưu trữ dữ liệu trong bộ nhớ", "Khả năng thực hiện các chỉ thị từ một chương trình", "Thực hiện các phép toán số học", "Kết nối với các thiết bị ngoại vi"],
+                    answer_vi: "Khả năng thực hiện các chỉ thị từ một chương trình",
+                    tip_vi: "Cốt lõi của Turing là sự điều khiển bằng 'chương trình' (tập hợp các chỉ thị).",
+                    question_en: "What is the most fundamental idea of a computer according to the Turing model?",
+                    options_en: ["Storing data in memory", "The ability to execute instructions from a program", "Performing arithmetic operations", "Connecting to peripheral devices"],
+                    answer_en: "The ability to execute instructions from a program",
+                    tip_en: "The core of Turing's idea is control by a 'program' (a set of instructions)."
+                },
+                {
+                    question_vi: "Ai là người đầu tiên đề xuất ý tưởng về một thiết bị tính toán phổ dụng vào năm 1936?",
+                    options_vi: ["John von Neumann", "Charles Babbage", "Blaise Pascal", "Alan Turing"],
+                    answer_vi: "Alan Turing",
+                    tip_vi: "Năm 1936 là cột mốc quan trọng gắn liền với bài báo khoa học của Alan Turing về 'Máy Turing'.",
+                    question_en: "Who first proposed the idea of a universal computing device in 1936?",
+                    options_en: ["John von Neumann", "Charles Babbage", "Blaise Pascal", "Alan Turing"],
+                    answer_en: "Alan Turing",
+                    tip_en: "The year 1936 is a key date associated with Alan Turing's paper on 'Turing Machines'."
+                },
+                // Phần 2: Mô hình Von Neumann (15 câu)
+                {
                     question_vi: "Khái niệm đột phá và quan trọng nhất của mô hình Von Neumann là gì?",
                     options_vi: ["Sử dụng bóng bán dẫn", "Khái niệm Chương trình được lưu trữ (Stored Program Concept)", "Kiến trúc 4 thành phần", "Thực thi song song"],
                     answer_vi: "Khái niệm Chương trình được lưu trữ (Stored Program Concept)",
@@ -304,8 +386,570 @@
                     answer_en: "Stored Program Concept",
                     tip_en: "Von Neumann = Stored Program. This is the fundamental idea that both the program and data reside together in memory."
                 },
-                // ... (Thêm 97 câu hỏi còn lại theo cấu trúc tương tự ở đây)
-                 {
+                {
+                    question_vi: "Theo khái niệm 'Stored Program Concept', chương trình và dữ liệu được lưu trữ ở đâu?",
+                    options_vi: ["Trong các đơn vị riêng biệt", "Trên các bìa đục lỗ bên ngoài", "Chung trong bộ nhớ của máy tính (Memory)", "Trong đơn vị điều khiển (Control Unit)"],
+                    answer_vi: "Chung trong bộ nhớ của máy tính (Memory)",
+                    tip_vi: "Đây chính là định nghĩa của Stored Program Concept - chương trình và dữ liệu 'ở chung một nhà' là bộ nhớ.",
+                    question_en: "According to the 'Stored Program Concept', where are the program and data stored?",
+                    options_en: ["In separate units", "On external punched cards", "Together in the computer's Memory", "In the Control Unit"],
+                    answer_en: "Together in the computer's Memory",
+                    tip_en: "This is the very definition of the Stored Program Concept - program and data 'live in the same house', which is the memory."
+                },
+                {
+                    question_vi: "Mô hình Von Neumann chia phần cứng máy tính thành bao nhiêu hệ thống con (subsystem)?",
+                    options_vi: ["2", "3", "4", "5"],
+                    answer_vi: "4",
+                    tip_vi: "Nhớ 4 khối chức năng: Memory, ALU, Control Unit, và Input/Output.",
+                    question_en: "The Von Neumann model divides computer hardware into how many subsystems?",
+                    options_en: ["2", "3", "4", "5"],
+                    answer_en: "4",
+                    tip_en: "Remember the 4 functional units: Memory, ALU, Control Unit, and Input/Output."
+                },
+                {
+                    question_vi: "Bốn hệ thống con trong kiến trúc Von Neumann là gì?",
+                    options_vi: ["CPU, RAM, ROM, I/O", "Memory, ALU, Control Unit, Input/Output", "Hardware, Software, Data, Network", "Input, Process, Output, Storage"],
+                    answer_vi: "Memory, ALU, Control Unit, Input/Output",
+                    tip_vi: "Đây là 4 thành phần kinh điển trong kiến trúc Von Neumann.",
+                    question_en: "What are the four subsystems in the Von Neumann architecture?",
+                    options_en: ["CPU, RAM, ROM, I/O", "Memory, ALU, Control Unit, Input/Output", "Hardware, Software, Data, Network", "Input, Process, Output, Storage"],
+                    answer_en: "Memory, ALU, Control Unit, Input/Output",
+                    tip_en: "These are the four classic components of the Von Neumann architecture."
+                },
+                {
+                    question_vi: "Chức năng chính của Đơn vị Số học & Logic (ALU) là gì?",
+                    options_vi: ["Lưu trữ chương trình và dữ liệu", "Điều khiển hoạt động của toàn bộ máy tính", "Thực hiện các phép toán và so sánh logic", "Giao tiếp với các thiết bị bên ngoài"],
+                    answer_vi: "Thực hiện các phép toán và so sánh logic",
+                    tip_vi: "ALU là 'máy tính' thực sự bên trong CPU, thực hiện cộng, trừ, và các phép logic như AND, OR.",
+                    question_en: "What is the main function of the Arithmetic Logic Unit (ALU)?",
+                    options_en: ["To store programs and data", "To control the operation of the entire computer", "To perform calculations and logical comparisons", "To communicate with external devices"],
+                    answer_en: "To perform calculations and logical comparisons",
+                    tip_en: "The ALU is the 'calculator' inside the CPU, performing addition, subtraction, and logical operations like AND, OR."
+                },
+                {
+                    question_vi: "Thành phần nào trong kiến trúc Von Neumann được coi là 'bộ não' của máy tính, có vai trò giải mã lệnh và điều phối các thành phần khác?",
+                    options_vi: ["Memory", "ALU", "Control Unit", "Input/Output Subsystem"],
+                    answer_vi: "Control Unit",
+                    tip_vi: "Control Unit (Đơn vị điều khiển) là 'nhạc trưởng', điều phối hoạt động của tất cả các thành phần khác.",
+                    question_en: "Which component in the Von Neumann architecture is considered the 'brain' of the computer, responsible for decoding instructions and coordinating other components?",
+                    options_en: ["Memory", "ALU", "Control Unit", "Input/Output Subsystem"],
+                    answer_en: "Control Unit",
+                    tip_en: "The Control Unit is the 'conductor' of the orchestra, coordinating the activities of all other components."
+                },
+                {
+                    question_vi: "Chức năng chính của Bộ nhớ (Memory) trong mô hình Von Neumann là gì?",
+                    options_vi: ["Chỉ lưu trữ dữ liệu", "Chỉ lưu trữ chương trình", "Lưu trữ cả chương trình và dữ liệu đang được xử lý", "Thực hiện các phép tính"],
+                    answer_vi: "Lưu trữ cả chương trình và dữ liệu đang được xử lý",
+                    tip_vi: "Bộ nhớ là không gian làm việc, chứa cả 'danh sách việc cần làm' (chương trình) và 'nguyên liệu' (dữ liệu).",
+                    question_en: "What is the main function of Memory in the Von Neumann model?",
+                    options_en: ["To store only data", "To store only the program", "To store both the program and the data being processed", "To perform calculations"],
+                    answer_en: "To store both the program and the data being processed",
+                    tip_en: "Memory is the workspace, holding both the 'to-do list' (program) and the 'ingredients' (data)."
+                },
+                {
+                    question_vi: "Hệ thống Nhập/Xuất (Input/Output Subsystem) có vai trò gì?",
+                    options_vi: ["Chỉ nhận dữ liệu từ bàn phím", "Chỉ hiển thị dữ liệu ra màn hình", "Là cầu nối giao tiếp giữa máy tính và thế giới bên ngoài (ví dụ: bàn phím, màn hình, ổ đĩa)", "Lưu trữ hệ điều hành"],
+                    answer_vi: "Là cầu nối giao tiếp giữa máy tính và thế giới bên ngoài (ví dụ: bàn phím, màn hình, ổ đĩa)",
+                    tip_vi: "I/O bao gồm tất cả các thiết bị giúp máy tính 'nói chuyện' với chúng ta và các thiết bị khác (bàn phím, chuột, màn hình, mạng...).",
+                    question_en: "What is the role of the Input/Output Subsystem?",
+                    options_en: ["Only to receive data from the keyboard", "Only to display data on the screen", "To act as the communication bridge between the computer and the outside world (e.g., keyboard, screen, drives)", "To store the operating system"],
+                    answer_en: "To act as the communication bridge between the computer and the outside world (e.g., keyboard, screen, drives)",
+                    tip_en: "I/O includes all devices that help the computer 'talk' to us and other devices (keyboard, mouse, screen, network...)."
+                },
+                {
+                    question_vi: "Theo mô hình Von Neumann, chương trình và dữ liệu được lưu trữ trong bộ nhớ dưới định dạng nào?",
+                    options_vi: ["Hệ thập phân", "Mã ASCII", "Các mẫu nhị phân (Binary patterns)", "Ngôn ngữ lập trình bậc cao"],
+                    answer_vi: "Các mẫu nhị phân (Binary patterns)",
+                    tip_vi: "Mọi thứ trong máy tính, từ chương trình đến dữ liệu, đều được quy về chuỗi các bit 0 và 1.",
+                    question_en: "According to the Von Neumann model, in what format are the program and data stored in memory?",
+                    options_en: ["Decimal system", "ASCII code", "Binary patterns", "High-level programming language"],
+                    answer_en: "Binary patterns",
+                    tip_en: "Everything in a computer, from programs to data, is ultimately reduced to strings of 0s and 1s."
+                },
+                {
+                    question_vi: "Nguyên tắc 'Thực thi tuần tự' (Sequential execution of instructions) có nghĩa là gì?",
+                    options_vi: ["Tất cả các lệnh được thực thi cùng một lúc", "Các lệnh được nạp từ bộ nhớ, giải mã và thực thi lần lượt, hết lệnh này đến lệnh khác", "Máy tính có thể bỏ qua một số lệnh", "Chỉ có một lệnh duy nhất trong mỗi chương trình"],
+                    answer_vi: "Các lệnh được nạp từ bộ nhớ, giải mã và thực thi lần lượt, hết lệnh này đến lệnh khác",
+                    tip_vi: "Máy tính cơ bản hoạt động như đọc một cuốn sách, xử lý từng câu lệnh một theo thứ tự.",
+                    question_en: "What does the principle of 'Sequential execution of instructions' mean?",
+                    options_en: ["All instructions are executed at the same time", "Instructions are fetched, decoded, and executed one after another in order", "The computer can skip some instructions", "There is only a single instruction in each program"],
+                    answer_en: "Instructions are fetched, decoded, and executed one after another in order",
+                    tip_en: "A basic computer operates like reading a book, processing one instruction at a time, sequentially."
+                },
+                {
+                    question_vi: "John von Neumann đề xuất mô hình kiến trúc máy tính của mình vào khoảng thời gian nào?",
+                    options_vi: ["1930-1935", "1936-1940", "1944-1945", "1950-1955"],
+                    answer_vi: "1944-1945",
+                    tip_vi: "Mô hình Von Neumann ra đời vào cuối Thế chiến II, là kết quả của dự án máy tính EDVAC.",
+                    question_en: "Around what time did John von Neumann propose his computer architecture model?",
+                    options_en: ["1930-1935", "1936-1940", "1944-1945", "1950-1955"],
+                    answer_en: "1944-1945",
+                    tip_en: "The Von Neumann model emerged near the end of World War II, as a result of the EDVAC computer project."
+                },
+                {
+                    question_vi: "Một ổ đĩa cứng (hard disk) có thể được coi là thiết bị nhập (input) khi nào?",
+                    options_vi: ["Khi máy tính ghi dữ liệu vào ổ đĩa", "Khi máy tính đọc dữ liệu từ ổ đĩa", "Không bao giờ, nó chỉ là thiết bị lưu trữ", "Luôn luôn, nó là một phần của hệ thống I/O"],
+                    answer_vi: "Khi máy tính đọc dữ liệu từ ổ đĩa",
+                    tip_vi: "Input là hành động đưa dữ liệu VÀO máy tính. Đọc từ ổ cứng là đưa dữ liệu từ ổ cứng vào RAM/CPU.",
+                    question_en: "When can a hard disk be considered an input device?",
+                    options_en: ["When the computer writes data to the disk", "When the computer reads data from the disk", "Never, it is only a storage device", "Always, it is part of the I/O system"],
+                    answer_en: "When the computer reads data from the disk",
+                    tip_en: "Input is the act of getting data INTO the computer. Reading from the disk brings data from the disk into RAM/CPU."
+                },
+                {
+                    question_vi: "Sự khác biệt cơ bản giữa kiến trúc của máy ENIAC và máy EDVAC là gì?",
+                    options_vi: ["ENIAC dùng bóng bán dẫn, EDVAC dùng bóng chân không", "ENIAC lập trình bên ngoài bằng dây cắm, EDVAC lưu chương trình trong bộ nhớ", "ENIAC nhỏ hơn EDVAC", "ENIAC là máy cơ học, EDVAC là máy điện tử"],
+                    answer_vi: "ENIAC lập trình bên ngoài bằng dây cắm, EDVAC lưu chương trình trong bộ nhớ",
+                    tip_vi: "EDVAC là máy tính đầu tiên áp dụng khái niệm 'Stored Program' của Von Neumann, một bước tiến lớn so với ENIAC.",
+                    question_en: "What is the fundamental difference between the architecture of the ENIAC and the EDVAC?",
+                    options_en: ["ENIAC used transistors, EDVAC used vacuum tubes", "ENIAC was programmed externally with wires, EDVAC stored the program in memory", "ENIAC was smaller than EDVAC", "ENIAC was mechanical, EDVAC was electronic"],
+                    answer_en: "ENIAC was programmed externally with wires, EDVAC stored the program in memory",
+                    tip_en: "EDVAC was the first computer to apply Von Neumann's 'Stored Program' concept, a major advance over ENIAC."
+                },
+                {
+                    question_vi: "Thành phần nào bao gồm cả ALU và Control Unit?",
+                    options_vi: ["Bộ nhớ chính (Main Memory)", "Đơn vị xử lý trung tâm (CPU)", "Thiết bị ngoại vi (Peripheral Device)", "Bo mạch chủ (Motherboard)"],
+                    answer_vi: "Đơn vị xử lý trung tâm (CPU)",
+                    tip_vi: "CPU = ALU + Control Unit. Đây là định nghĩa cơ bản về cấu trúc của CPU.",
+                    question_en: "Which component includes both the ALU and the Control Unit?",
+                    options_en: ["Main Memory", "Central Processing Unit (CPU)", "Peripheral Device", "Motherboard"],
+                    answer_en: "Central Processing Unit (CPU)",
+                    tip_en: "CPU = ALU + Control Unit. This is the basic definition of a CPU's structure."
+                },
+                {
+                    question_vi: "Tại sao việc lưu trữ chương trình và dữ liệu dưới cùng một định dạng (nhị phân) lại quan trọng trong mô hình Von Neumann?",
+                    options_vi: ["Để tiết kiệm chi phí sản xuất", "Vì nó cho phép máy tính xử lý chương trình như một loại dữ liệu, tạo ra sự linh hoạt cao.", "Để tăng tốc độ của ALU", "Vì đây là yêu cầu của hệ điều hành"],
+                    answer_vi: "Vì nó cho phép máy tính xử lý chương trình như một loại dữ liệu, tạo ra sự linh hoạt cao.",
+                    tip_vi: "Điều này cho phép một chương trình có thể tạo ra hoặc sửa đổi một chương trình khác, nền tảng cho các trình biên dịch và AI.",
+                    question_en: "Why is storing the program and data in the same format (binary) important in the Von Neumann model?",
+                    options_en: ["To save manufacturing costs", "Because it allows the computer to treat a program as data, creating great flexibility.", "To increase the speed of the ALU", "Because it is a requirement of the operating system"],
+                    answer_en: "Because it allows the computer to treat a program as data, creating great flexibility.",
+                    tip_en: "This allows one program to create or modify another program, which is the foundation for compilers and AI."
+                },
+                // Phần 3: Các thành phần của máy tính (15 câu)
+                {
+                    question_vi: "Ba thành phần chính cấu tạo nên một máy tính là gì?",
+                    options_vi: ["CPU, Màn hình, Bàn phím", "Hệ điều hành, Ứng dụng, Dữ liệu người dùng", "Phần cứng (Hardware), Dữ liệu (Data), Phần mềm (Software)", "Điện, Mạng, Người dùng"],
+                    answer_vi: "Phần cứng (Hardware), Dữ liệu (Data), Phần mềm (Software)",
+                    tip_vi: "Đây là 3 trụ cột của một hệ thống máy tính hoàn chỉnh: Thể xác (Hardware), Linh hồn (Software), và Nguyên liệu (Data).",
+                    question_en: "What are the three main components that make up a computer?",
+                    options_en: ["CPU, Monitor, Keyboard", "Operating System, Applications, User Data", "Hardware, Data, Software", "Electricity, Network, User"],
+                    answer_en: "Hardware, Data, Software",
+                    tip_en: "These are the 3 pillars of a complete computer system: The Body (Hardware), The Soul (Software), and The Material (Data)."
+                },
+                {
+                    question_vi: "'Dữ liệu' được lưu trữ trong máy tính điện tử dưới dạng gì?",
+                    options_vi: ["Sóng điện từ", "Sự hiện diện hoặc vắng mặt của tín hiệu điện (tương ứng 0 và 1)", "Các ký tự thập phân (0-9)", "Ánh sáng"],
+                    answer_vi: "Sự hiện diện hoặc vắng mặt của tín hiệu điện (tương ứng 0 và 1)",
+                    tip_vi: "Đây là nguyên tắc cơ bản của hệ nhị phân: Có điện (1), không có điện (0).",
+                    question_en: "In what form is 'data' stored in an electronic computer?",
+                    options_en: ["Electromagnetic waves", "The presence or absence of an electrical signal (corresponding to 0 and 1)", "Decimal characters (0-9)", "Light"],
+                    answer_en: "The presence or absence of an electrical signal (corresponding to 0 and 1)",
+                    tip_en: "This is the fundamental principle of the binary system: electricity on (1), electricity off (0)."
+                },
+                {
+                    question_vi: "Một chương trình máy tính (program) về cơ bản là gì?",
+                    options_vi: ["Một thành phần phần cứng", "Một chuỗi các chỉ thị (a sequence of instructions)", "Dữ liệu đầu vào", "Một thuật toán trên giấy"],
+                    answer_vi: "Một chuỗi các chỉ thị (a sequence of instructions)",
+                    tip_vi: "Chương trình là một 'bản hướng dẫn' chi tiết, từng bước một, cho máy tính biết phải làm gì.",
+                    question_en: "What is a computer program, fundamentally?",
+                    options_en: ["A hardware component", "A sequence of instructions", "Input data", "An algorithm on paper"],
+                    answer_en: "A sequence of instructions",
+                    tip_en: "A program is a detailed, step-by-step 'instruction manual' for the computer."
+                },
+                {
+                    question_vi: "Thuật toán (Algorithm) là gì?",
+                    options_vi: ["Một ngôn ngữ lập trình", "Một giải pháp từng bước, hữu hạn để giải quyết một vấn đề", "Một phần mềm hoàn chỉnh", "Tên của một hệ điều hành"],
+                    answer_vi: "Một giải pháp từng bước, hữu hạn để giải quyết một vấn đề",
+                    tip_vi: "Thuật toán là 'công thức', còn chương trình là 'món ăn' được nấu theo công thức đó.",
+                    question_en: "What is an Algorithm?",
+                    options_en: ["A programming language", "A step-by-step, finite solution to a problem", "A complete software package", "The name of an operating system"],
+                    answer_en: "A step-by-step, finite solution to a problem",
+                    tip_en: "An algorithm is the 'recipe', while the program is the 'dish' cooked from that recipe."
+                },
+                {
+                    question_vi: "Tại sao các chương trình cần được tạo thành từ các chỉ thị có thể tái sử dụng?",
+                    options_vi: ["Để làm cho chương trình dài hơn", "Để tăng tính phức tạp", "Để lập trình dễ dàng hơn và có thể kết hợp các chỉ thị để tạo ra vô số chương trình khác nhau", "Vì đó là yêu cầu của phần cứng"],
+                    answer_vi: "Để lập trình dễ dàng hơn và có thể kết hợp các chỉ thị để tạo ra vô số chương trình khác nhau",
+                    tip_vi: "Giống như các chữ cái có thể tạo ra vô số từ, các chỉ thị cơ bản có thể được kết hợp để tạo ra các chương trình phức tạp.",
+                    question_en: "Why do programs need to be made of reusable instructions?",
+                    options_en: ["To make the program longer", "To increase complexity", "To make programming easier and to combine instructions to create countless different programs", "Because it is a hardware requirement"],
+                    answer_en: "To make programming easier and to combine instructions to create countless different programs",
+                    tip_en: "Just as letters can form countless words, basic instructions can be combined to create complex programs."
+                },
+                {
+                    question_vi: "Ngôn ngữ máy (Machine language) sử dụng gì để biểu diễn các chỉ thị?",
+                    options_vi: ["Các từ tiếng Anh", "Các ký hiệu toán học", "Các mẫu nhị phân (Binary patterns)", "Các sơ đồ khối"],
+                    answer_vi: "Các mẫu nhị phân (Binary patterns)",
+                    tip_vi: "Ngôn ngữ máy là ngôn ngữ 'mẹ đẻ' của CPU, chỉ bao gồm các số 0 và 1.",
+                    question_en: "What does Machine Language use to represent instructions?",
+                    options_en: ["English words", "Mathematical symbols", "Binary patterns", "Flowcharts"],
+                    answer_en: "Binary patterns",
+                    tip_en: "Machine language is the 'native tongue' of the CPU, consisting only of 0s and 1s."
+                },
+                {
+                    question_vi: "Chức năng chính của một Hệ điều hành (Operating System) là gì?",
+                    options_vi: ["Chạy các trò chơi điện tử", "Quản lý tài nguyên phần cứng và cung cấp môi trường cho các chương trình khác chạy", "Tạo ra các thuật toán", "Biên dịch mã nguồn"],
+                    answer_vi: "Quản lý tài nguyên phần cứng và cung cấp môi trường cho các chương trình khác chạy",
+                    tip_vi: "Hệ điều hành là 'người quản gia', điều phối mọi hoạt động của phần cứng và phần mềm.",
+                    question_en: "What is the main function of an Operating System?",
+                    options_en: ["To run video games", "To manage hardware resources and provide an environment for other programs to run", "To create algorithms", "To compile source code"],
+                    answer_en: "To manage hardware resources and provide an environment for other programs to run",
+                    tip_en: "The Operating System is the 'manager', coordinating all hardware and software activities."
+                },
+                {
+                    question_vi: "Lĩnh vực nào liên quan đến việc thiết kế và viết các chương trình có cấu trúc, tuân thủ các quy tắc và nguyên tắc nghiêm ngặt?",
+                    options_vi: ["Kỹ thuật phần cứng (Hardware engineering)", "Tổ chức dữ liệu (Data organization)", "Kỹ thuật phần mềm (Software engineering)", "Quản trị mạng (Network administration)"],
+                    answer_vi: "Kỹ thuật phần mềm (Software engineering)",
+                    tip_vi: "Kỹ thuật phần mềm áp dụng các nguyên tắc kỹ thuật vào việc xây dựng phần mềm một cách chuyên nghiệp và có hệ thống.",
+                    question_en: "Which field involves designing and writing structured programs that adhere to strict rules and principles?",
+                    options_en: ["Hardware engineering", "Data organization", "Software engineering", "Network administration"],
+                    answer_en: "Software engineering",
+                    tip_en: "Software engineering applies engineering principles to the professional and systematic development of software."
+                },
+                {
+                    question_vi: "Việc tổ chức dữ liệu thành các đơn vị nhỏ, rồi các đơn vị nhỏ thành các đơn vị lớn hơn (ví dụ: ký tự -> từ -> câu -> đoạn văn) là một khái niệm trong lĩnh vực nào?",
+                    options_vi: ["Kiến trúc máy tính", "Tổ chức dữ liệu (Data organization)", "Lập trình hệ thống", "Bảo mật máy tính"],
+                    answer_vi: "Tổ chức dữ liệu (Data organization)",
+                    tip_vi: "Tổ chức dữ liệu nghiên cứu cách cấu trúc và lưu trữ dữ liệu để có thể truy cập và sử dụng hiệu quả.",
+                    question_en: "The organization of data from small units into larger ones (e.g., character -> word -> sentence -> paragraph) is a concept in which field?",
+                    options_en: ["Computer architecture", "Data organization", "Systems programming", "Computer security"],
+                    answer_en: "Data organization",
+                    tip_en: "Data organization studies how to structure and store data for efficient access and use."
+                },
+                {
+                    question_vi: "'Programming' trong các máy tính thời kỳ đầu có nghĩa là gì?",
+                    options_vi: ["Viết mã bằng ngôn ngữ bậc cao", "Thay đổi hệ thống dây điện hoặc bật/tắt một loạt công tắc", "Cài đặt một hệ điều hành", "Sử dụng giao diện đồ họa"],
+                    answer_vi: "Thay đổi hệ thống dây điện hoặc bật/tắt một loạt công tắc",
+                    tip_vi: "Lập trình khi đó là một công việc cơ khí, không phải là gõ lệnh trên bàn phím.",
+                    question_en: "What did 'Programming' mean in the early days of computers?",
+                    options_en: ["Writing code in a high-level language", "Changing the wiring or flipping a series of switches", "Installing an operating system", "Using a graphical interface"],
+                    answer_en: "Changing the wiring or flipping a series of switches",
+                    tip_en: "Programming back then was a physical job, not typing commands on a keyboard."
+                },
+                {
+                    question_vi: "Phần mềm hệ thống (System Software) là gì?",
+                    options_vi: ["Một trò chơi như 'Minesweeper'", "Một phần mềm điều khiển truy cập vào phần cứng, ví dụ như hệ điều hành", "Một trình duyệt web như Chrome", "Dữ liệu của người dùng"],
+                    answer_vi: "Một phần mềm điều khiển truy cập vào phần cứng, ví dụ như hệ điều hành",
+                    tip_vi: "Phần mềm hệ thống phục vụ cho máy tính (ví dụ: Hệ điều hành). Phần mềm ứng dụng phục vụ cho người dùng (ví dụ: Word, Chrome).",
+                    question_en: "What is System Software?",
+                    options_en: ["A game like 'Minesweeper'", "Software that controls access to hardware, like an operating system", "A web browser like Chrome", "The user's data"],
+                    answer_en: "Software that controls access to hardware, like an operating system",
+                    tip_en: "System software serves the computer (e.g., OS). Application software serves the user (e.g., Word, Chrome)."
+                },
+                {
+                    question_vi: "Phần mềm ứng dụng (Application Software) là gì?",
+                    options_vi: ["Hệ điều hành Windows", "Trình điều khiển (driver) của máy in", "Một chương trình được thiết kế cho người dùng cuối, ví dụ như Microsoft Word", "BIOS của máy tính"],
+                    answer_vi: "Một chương trình được thiết kế cho người dùng cuối, ví dụ như Microsoft Word",
+                    tip_vi: "Application (Ứng dụng) là những gì bạn trực tiếp sử dụng để làm việc, giải trí.",
+                    question_en: "What is Application Software?",
+                    options_en: ["The Windows operating system", "A printer driver", "A program designed for end-users, like Microsoft Word", "The computer's BIOS"],
+                    answer_en: "A program designed for end-users, like Microsoft Word",
+                    tip_en: "Applications are what you directly use for work and entertainment."
+                },
+                {
+                    question_vi: "Mối quan hệ giữa thuật toán và chương trình là gì?",
+                    options_vi: ["Chúng là một", "Thuật toán là ý tưởng/giải pháp, chương trình là sự hiện thực hóa thuật toán bằng một ngôn ngữ lập trình cụ thể", "Chương trình tạo ra thuật toán", "Chúng không liên quan đến nhau"],
+                    answer_vi: "Thuật toán là ý tưởng/giải pháp, chương trình là sự hiện thực hóa thuật toán bằng một ngôn ngữ lập trình cụ thể",
+                    tip_vi: "Thuật toán là bản thiết kế, chương trình là ngôi nhà được xây từ bản thiết kế đó.",
+                    question_en: "What is the relationship between an algorithm and a program?",
+                    options_en: ["They are the same thing", "An algorithm is the idea/solution, a program is the implementation of that algorithm in a specific programming language", "A program creates an algorithm", "They are unrelated"],
+                    answer_en: "An algorithm is the idea/solution, a program is the implementation of that algorithm in a specific programming language",
+                    tip_en: "An algorithm is the blueprint; a program is the house built from that blueprint."
+                },
+                {
+                    question_vi: "Dữ liệu như văn bản, hình ảnh, âm thanh cần phải được... trước khi có thể lưu trữ trong máy tính.",
+                    options_vi: ["In ra giấy", "Xóa đi", "Chuyển đổi thành dạng nhị phân", "Nén lại"],
+                    answer_vi: "Chuyển đổi thành dạng nhị phân",
+                    tip_vi: "Máy tính chỉ hiểu được ngôn ngữ 0 và 1, nên mọi loại dữ liệu đều phải được 'dịch' sang ngôn ngữ này.",
+                    question_en: "Data such as text, images, and audio must be... before they can be stored in a computer.",
+                    options_en: ["Printed on paper", "Deleted", "Converted to binary form", "Compressed"],
+                    answer_en: "Converted to binary form",
+                    tip_en: "Computers only understand the language of 0s and 1s, so all data types must be 'translated' into this language."
+                },
+                {
+                    question_vi: "Lĩnh vực khoa học máy tính nghiên cứu về cách tạo ra phần cứng và phần mềm được gọi là gì?",
+                    options_vi: ["Lĩnh vực ứng dụng (Applications areas)", "Lĩnh vực hệ thống (Systems areas)", "Lĩnh vực lý thuyết (Theoretical areas)", "Lĩnh vực dữ liệu (Data areas)"],
+                    answer_vi: "Lĩnh vực hệ thống (Systems areas)",
+                    tip_vi: "Lĩnh vực hệ thống bao gồm các chủ đề cốt lõi như kiến trúc máy tính, hệ điều hành, mạng, trình biên dịch...",
+                    question_en: "What is the area of computer science that studies how to create hardware and software called?",
+                    options_en: ["Applications areas", "Systems areas", "Theoretical areas", "Data areas"],
+                    answer_en: "Systems areas",
+                    tip_en: "The systems area includes core topics like computer architecture, operating systems, networks, compilers..."
+                },
+                // Phần 4: Lịch sử Máy tính (20 câu)
+                {
+                    question_vi: "Máy tính cơ học Pascaline, được phát minh vào thế kỷ 17, có thể thực hiện những phép toán nào?",
+                    options_vi: ["Chỉ cộng và trừ", "Cộng, trừ, nhân, chia", "Giải phương trình đa thức", "Sắp xếp dữ liệu"],
+                    answer_vi: "Chỉ cộng và trừ",
+                    tip_vi: "Pascaline là một máy tính cơ học sơ khai, chức năng còn rất hạn chế.",
+                    question_en: "The Pascaline, a mechanical calculator invented in the 17th century, could perform which operations?",
+                    options_en: ["Only addition and subtraction", "Addition, subtraction, multiplication, division", "Solving polynomial equations", "Sorting data"],
+                    answer_en: "Only addition and subtraction",
+                    tip_en: "The Pascaline was a very early mechanical calculator with limited functionality."
+                },
+                {
+                    question_vi: "Máy dệt Jacquard (Jacquard Loom) được coi là một cột mốc quan trọng vì nó là máy đầu tiên sử dụng...?",
+                    options_vi: ["Điện năng", "Bìa đục lỗ để lưu trữ một 'chương trình'", "Bóng bán dẫn", "Bộ nhớ trong"],
+                    answer_vi: "Bìa đục lỗ để lưu trữ một 'chương trình'",
+                    tip_vi: "Bìa đục lỗ của máy dệt Jacquard là hình thức lưu trữ chương trình đầu tiên, truyền cảm hứng cho Charles Babbage.",
+                    question_en: "The Jacquard Loom is considered a milestone because it was the first machine to use...?",
+                    options_en: ["Electricity", "Punched cards to store a 'program'", "Transistors", "Internal memory"],
+                    answer_en: "Punched cards to store a 'program'",
+                    tip_en: "The Jacquard Loom's punched cards were the first form of program storage, inspiring Charles Babbage."
+                },
+                {
+                    question_vi: "Ai được coi là 'cha đẻ của máy tính' với các phát minh về Difference Engine và Analytical Engine?",
+                    options_vi: ["Blaise Pascal", "Gottfried Leibniz", "Charles Babbage", "Herman Hollerith"],
+                    answer_vi: "Charles Babbage",
+                    tip_vi: "Analytical Engine của Babbage đã có đủ 4 thành phần của một máy tính hiện đại, dù chỉ là trên lý thuyết.",
+                    question_en: "Who is considered the 'father of the computer' for his inventions of the Difference Engine and Analytical Engine?",
+                    options_en: ["Blaise Pascal", "Gottfried Leibniz", "Charles Babbage", "Herman Hollerith"],
+                    answer_en: "Charles Babbage",
+                    tip_en: "Babbage's Analytical Engine had all four components of a modern computer, even if only in theory."
+                },
+                {
+                    question_vi: "Máy Analytical Engine của Charles Babbage có 4 thành phần tương ứng với kiến trúc Von Neumann. Thành phần 'mill' tương ứng với bộ phận nào ngày nay?",
+                    options_vi: ["Memory", "ALU", "Control Unit", "Input/Output"],
+                    answer_vi: "ALU",
+                    tip_vi: "'Mill' (cối xay) là nơi thực hiện các phép tính, giống như ALU ngày nay.",
+                    question_en: "Babbage's Analytical Engine had 4 components corresponding to the Von Neumann architecture. Which modern part corresponds to the 'mill'?",
+                    options_en: ["Memory", "ALU", "Control Unit", "Input/Output"],
+                    answer_en: "ALU",
+                    tip_en: "The 'mill' was where calculations were performed, just like the ALU today."
+                },
+                {
+                    question_vi: "Herman Hollerith đã thiết kế một cỗ máy dùng bìa đục lỗ để xử lý dữ liệu cho mục đích gì?",
+                    options_vi: ["Điều khiển máy dệt", "Giải mã quân sự", "Tổng điều tra dân số Hoa Kỳ năm 1890", "Dự báo thời tiết"],
+                    answer_vi: "Tổng điều tra dân số Hoa Kỳ năm 1890",
+                    tip_vi: "Phát minh của Hollerith đã giúp giảm thời gian xử lý tổng điều tra từ nhiều năm xuống còn vài tháng. Công ty của ông sau này trở thành IBM.",
+                    question_en: "Herman Hollerith designed a machine using punched cards to process data for what purpose?",
+                    options_en: ["Controlling a loom", "Military codebreaking", "The 1890 United States Census", "Weather forecasting"],
+                    answer_en: "The 1890 United States Census",
+                    tip_en: "Hollerith's invention reduced the census processing time from years to months. His company later became IBM."
+                },
+                {
+                    question_vi: "Máy tính điện tử đa năng, hoàn toàn bằng điện tử đầu tiên có tên là gì?",
+                    options_vi: ["Mark I", "Colossus", "ENIAC", "ABC"],
+                    answer_vi: "ENIAC",
+                    tip_vi: "ENIAC là một 'gã khổng lồ' đánh dấu sự ra đời của máy tính điện tử thực sự.",
+                    question_en: "What was the name of the first general-purpose, fully electronic digital computer?",
+                    options_en: ["Mark I", "Colossus", "ENIAC", "ABC"],
+                    answer_en: "ENIAC",
+                    tip_en: "ENIAC was a 'giant' that marked the true beginning of electronic computing."
+                },
+                {
+                    question_vi: "Đặc điểm chính của các máy tính điện tử thời kỳ đầu (1930-1950) như ENIAC là gì?",
+                    options_vi: ["Chúng lưu chương trình trong bộ nhớ", "Chúng được lập trình từ bên ngoài (bằng dây cắm, công tắc)", "Chúng rất nhỏ gọn", "Chúng sử dụng vi xử lý"],
+                    answer_vi: "Chúng được lập trình từ bên ngoài (bằng dây cắm, công tắc)",
+                    tip_vi: "Lập trình ENIAC là một công việc vật lý, giống như cắm rút dây trên tổng đài điện thoại.",
+                    question_en: "What was a key characteristic of early electronic computers (1930-1950) like ENIAC?",
+                    options_en: ["They stored programs in memory", "They were programmed externally (with wires and switches)", "They were very compact", "They used microprocessors"],
+                    answer_en: "They were programmed externally (with wires and switches)",
+                    tip_en: "Programming ENIAC was a physical job, like replugging wires on a switchboard."
+                },
+                {
+                    question_vi: "Máy tính nào là máy tính đầu tiên được chế tạo dựa trên ý tưởng của Von Neumann (stored-program concept)?",
+                    options_vi: ["ENIAC", "Mark I", "EDVAC", "ABC"],
+                    answer_vi: "EDVAC",
+                    tip_vi: "EDVAC là bước tiến lớn so với ENIAC vì nó có thể lưu chương trình trong bộ nhớ, không cần cắm rút dây nữa.",
+                    question_en: "Which computer was the first to be built based on Von Neumann's stored-program concept?",
+                    options_en: ["ENIAC", "Mark I", "EDVAC", "ABC"],
+                    answer_en: "EDVAC",
+                    tip_en: "EDVAC was a major step up from ENIAC because it could store its program in memory, eliminating the need for rewiring."
+                },
+                {
+                    question_vi: "Thế hệ máy tính thứ nhất (First Generation, 1950-1959) sử dụng công nghệ điện tử nào làm thành phần chuyển mạch chính?",
+                    options_vi: ["Rơ-le (Relays)", "Bóng đèn chân không (Vacuum tubes)", "Bóng bán dẫn (Transistors)", "Mạch tích hợp (ICs)"],
+                    answer_vi: "Bóng đèn chân không (Vacuum tubes)",
+                    tip_vi: "Thế hệ 1 = Bóng đèn chân không. Chúng rất to, nóng và hay hỏng.",
+                    question_en: "What electronic technology did first-generation computers (1950-1959) use as their main switching component?",
+                    options_en: ["Relays", "Vacuum tubes", "Transistors", "Integrated Circuits (ICs)"],
+                    answer_en: "Vacuum tubes",
+                    tip_en: "1st Gen = Vacuum tubes. They were large, hot, and unreliable."
+                },
+                {
+                    question_vi: "Thế hệ máy tính thứ hai (Second Generation, 1959-1965) được đặc trưng bởi phát minh nào?",
+                    options_vi: ["Bóng đèn chân không", "Bóng bán dẫn (Transistors)", "Vi xử lý (Microprocessors)", "Mạng máy tính"],
+                    answer_vi: "Bóng bán dẫn (Transistors)",
+                    tip_vi: "Thế hệ 2 = Bóng bán dẫn. Đây là cuộc cách mạng giúp máy tính nhỏ hơn, nhanh hơn và đáng tin cậy hơn.",
+                    question_en: "The second generation of computers (1959-1965) was characterized by which invention?",
+                    options_en: ["Vacuum tubes", "Transistors", "Microprocessors", "Computer networks"],
+                    answer_en: "Transistors",
+                    tip_en: "2nd Gen = Transistors. This was a revolution that made computers smaller, faster, and more reliable."
+                },
+                {
+                    question_vi: "Sự ra đời của bóng bán dẫn đã mang lại lợi ích gì so với bóng đèn chân không?",
+                    options_vi: ["Lớn hơn và đắt hơn", "Nhỏ hơn, rẻ hơn, tiêu thụ ít điện năng hơn và bền hơn", "Nhanh hơn nhưng không đáng tin cậy", "Chỉ có thể thực hiện phép cộng"],
+                    answer_vi: "Nhỏ hơn, rẻ hơn, tiêu thụ ít điện năng hơn và bền hơn",
+                    tip_vi: "Bóng bán dẫn là một bước nhảy vọt về mọi mặt so với bóng đèn chân không.",
+                    question_en: "What benefits did the advent of the transistor bring compared to the vacuum tube?",
+                    options_en: ["Larger and more expensive", "Smaller, cheaper, less power-hungry, and more durable", "Faster but less reliable", "Could only perform addition"],
+                    answer_en: "Smaller, cheaper, less power-hungry, and more durable",
+                    tip_en: "The transistor was a quantum leap in every aspect compared to the vacuum tube."
+                },
+                {
+                    question_vi: "Các ngôn ngữ lập trình bậc cao như FORTRAN và COBOL xuất hiện trong thế hệ máy tính nào?",
+                    options_vi: ["Thế hệ 1", "Thế hệ 2", "Thế hệ 3", "Thế hệ 4"],
+                    answer_vi: "Thế hệ 2",
+                    tip_vi: "Sự ra đời của ngôn ngữ bậc cao trong Thế hệ 2 đã giúp việc lập trình trở nên dễ dàng và phổ biến hơn.",
+                    question_en: "In which computer generation did high-level programming languages like FORTRAN and COBOL appear?",
+                    options_en: ["1st Generation", "2nd Generation", "3rd Generation", "4th Generation"],
+                    answer_en: "2nd Generation",
+                    tip_en: "The emergence of high-level languages in the 2nd Generation made programming easier and more widespread."
+                },
+                {
+                    question_vi: "Phát minh nào là đặc trưng của thế hệ máy tính thứ ba (Third Generation, 1965-1975)?",
+                    options_vi: ["Bóng bán dẫn", "Mạch tích hợp (Integrated Circuit - IC)", "Vi xử lý", "Internet"],
+                    answer_vi: "Mạch tích hợp (Integrated Circuit - IC)",
+                    tip_vi: "Thế hệ 3 = Mạch tích hợp (IC). Thay vì dùng từng bóng bán dẫn riêng lẻ, người ta tích hợp nhiều bóng lên một con chip.",
+                    question_en: "Which invention characterized the third generation of computers (1965-1975)?",
+                    options_en: ["Transistor", "Integrated Circuit (IC)", "Microprocessor", "Internet"],
+                    answer_en: "Integrated Circuit (IC)",
+                    tip_en: "3rd Gen = Integrated Circuit (IC). Instead of individual transistors, many were integrated onto a single chip."
+                },
+                {
+                    question_vi: "Sự ra đời của các 'minicomputer' và ngành công nghiệp phần mềm là dấu ấn của thế hệ máy tính nào?",
+                    options_vi: ["Thế hệ 2", "Thế hệ 3", "Thế hệ 4", "Thế hệ 5"],
+                    answer_vi: "Thế hệ 3",
+                    tip_vi: "Với mạch tích hợp (IC), máy tính trở nên rẻ hơn (minicomputer), tạo ra thị trường cho các công ty bán phần mềm.",
+                    question_en: "The advent of 'minicomputers' and the software industry were hallmarks of which computer generation?",
+                    options_en: ["2nd Generation", "3rd Generation", "4th Generation", "5th Generation"],
+                    answer_en: "3rd Generation",
+                    tip_en: "With ICs, computers became cheaper (minicomputers), creating a market for companies to sell software."
+                },
+                {
+                    question_vi: "Vi xử lý (microprocessor), tức là toàn bộ CPU nằm trên một con chip duy nhất, là đặc trưng của thế hệ máy tính nào?",
+                    options_vi: ["Thế hệ 2", "Thế hệ 3", "Thế hệ 4", "Thế hệ 5"],
+                    answer_vi: "Thế hệ 4",
+                    tip_vi: "Thế hệ 4 = Vi xử lý (Microprocessor). Đây là tiền đề cho sự ra đời của máy tính cá nhân (PC).",
+                    question_en: "The microprocessor, an entire CPU on a single chip, is the hallmark of which computer generation?",
+                    options_en: ["2nd Generation", "3rd Generation", "4th Generation", "5th Generation"],
+                    answer_en: "4th Generation",
+                    tip_en: "4th Gen = Microprocessor. This was the prerequisite for the birth of the personal computer (PC)."
+                },
+                {
+                    question_vi: "Sự xuất hiện của máy tính cá nhân (microcomputers/PCs) như Altair 8800 là cột mốc của thế hệ nào?",
+                    options_vi: ["Thế hệ 2", "Thế hệ 3", "Thế hệ 4", "Thế hệ 5"],
+                    answer_vi: "Thế hệ 4",
+                    tip_vi: "Nhờ có vi xử lý, máy tính trở nên đủ nhỏ và rẻ để người dùng cá nhân có thể sở hữu.",
+                    question_en: "The appearance of personal computers (microcomputers/PCs) like the Altair 8800 was a milestone of which generation?",
+                    options_en: ["2nd Generation", "3rd Generation", "4th Generation", "5th Generation"],
+                    answer_en: "4th Generation",
+                    tip_en: "Thanks to the microprocessor, computers became small and cheap enough for individuals to own."
+                },
+                {
+                    question_vi: "Thế hệ máy tính thứ năm (Fifth Generation, 1985-nay) được đặc trưng bởi sự phát triển của...?",
+                    options_vi: ["Máy tính lớn (Mainframes)", "Bóng bán dẫn", "Máy tính xách tay, đa phương tiện, và mạng máy tính toàn cầu", "Bìa đục lỗ"],
+                    answer_vi: "Máy tính xách tay, đa phương tiện, và mạng máy tính toàn cầu",
+                    tip_vi: "Thế hệ 5 là kỷ nguyên của kết nối (Internet), di động (laptop), và trí tuệ (AI).",
+                    question_en: "The fifth generation of computers (1985-present) is characterized by the development of...?",
+                    options_en: ["Mainframes", "Transistors", "Laptops, multimedia, and global computer networks", "Punched cards"],
+                    answer_en: "Laptops, multimedia, and global computer networks",
+                    tip_en: "The 5th Generation is the era of connectivity (Internet), mobility (laptops), and intelligence (AI)."
+                },
+                {
+                    question_vi: "Máy tính Colossus được Alan Turing phát triển ở Anh trong Thế chiến II nhằm mục đích gì?",
+                    options_vi: ["Tính toán quỹ đạo tên lửa", "Phá mã Enigma của Đức", "Quản lý kho hàng", "Mô phỏng phản ứng hạt nhân"],
+                    answer_vi: "Phá mã Enigma của Đức",
+                    tip_vi: "Colossus là một trong những máy tính điện tử đầu tiên, được tạo ra cho một mục đích chuyên dụng là giải mã.",
+                    question_en: "The Colossus computer, developed in Britain during WWII, was created for what purpose?",
+                    options_en: ["Calculating missile trajectories", "Breaking the German Enigma code", "Inventory management", "Simulating nuclear reactions"],
+                    answer_en: "Breaking the German Enigma code",
+                    tip_en: "Colossus was one of the first electronic computers, created for the specific purpose of codebreaking."
+                },
+                {
+                    question_vi: "Máy tính ABC (Atanasoff-Berry Computer) là một máy tính...?",
+                    options_vi: ["Đa năng", "Chuyên dụng để giải hệ phương trình tuyến tính", "Cơ học", "Dựa trên kiến trúc Von Neumann"],
+                    answer_vi: "Chuyên dụng để giải hệ phương trình tuyến tính",
+                    tip_vi: "ABC là một trong những máy tính điện tử đầu tiên nhưng là máy chuyên dụng, không phải đa năng như ENIAC.",
+                    question_en: "The Atanasoff-Berry Computer (ABC) was a...?",
+                    options_en: ["General-purpose computer", "Special-purpose computer for solving systems of linear equations", "Mechanical computer", "Computer based on Von Neumann architecture"],
+                    answer_en: "Special-purpose computer for solving systems of linear equations",
+                    tip_en: "The ABC was one of the first electronic computers, but it was special-purpose, not general-purpose like ENIAC."
+                },
+                {
+                    question_vi: "Máy tính Mark I, được phát triển tại Đại học Harvard, sử dụng công nghệ nào?",
+                    options_vi: ["Hoàn toàn điện tử", "Hoàn toàn cơ học", "Kết hợp cả thành phần điện và cơ (điện-cơ)", "Sử dụng vi xử lý"],
+                    answer_vi: "Kết hợp cả thành phần điện và cơ (điện-cơ)",
+                    tip_vi: "Mark I sử dụng các rơ-le điện-cơ để tính toán, nó phát ra tiếng 'lạch cạch' rất lớn khi hoạt động.",
+                    question_en: "The Mark I computer, developed at Harvard University, used what technology?",
+                    options_en: ["Fully electronic", "Fully mechanical", "A mix of electrical and mechanical components (electro-mechanical)", "Microprocessors"],
+                    answer_en: "A mix of electrical and mechanical components (electro-mechanical)",
+                    tip_en: "The Mark I used electro-mechanical relays for calculation, making loud clicking noises as it worked."
+                },
+                // Phần 5: Câu hỏi tổng hợp và nâng cao (40 câu)
+                {
+                    question_vi: "Đâu là sự khác biệt cơ bản nhất giữa mô hình Turing và mô hình Von Neumann?",
+                    options_vi: ["Mô hình Turing là lý thuyết, mô hình Von Neumann là kiến trúc thực tế.", "Mô hình Turing mô tả 'cái gì' một máy tính có thể làm, còn Von Neumann mô tả 'làm thế nào' để xây dựng nó.", "Mô hình Turing không có khái niệm 'bộ nhớ' rõ ràng cho chương trình, trong khi Von Neumann nhấn mạnh 'chương trình được lưu trữ trong bộ nhớ'.", "Tất cả các ý trên đều đúng."],
+                    answer_vi: "Tất cả các ý trên đều đúng.",
+                    tip_vi: "Turing là triết học ('what'), Von Neumann là kỹ thuật ('how'). Cả hai bổ sung cho nhau.",
+                    question_en: "What is the most fundamental difference between the Turing model and the Von Neumann model?",
+                    options_en: ["The Turing model is theoretical, while the Von Neumann model is a practical architecture.", "The Turing model describes 'what' a computer can do, while Von Neumann describes 'how' to build it.", "The Turing model lacks a clear concept of memory for programs, whereas Von Neumann emphasizes the 'stored-program concept'.", "All of the above are correct."],
+                    answer_en: "All of the above are correct.",
+                    tip_en: "Turing is the philosophy ('what'), Von Neumann is the engineering ('how'). They complement each other."
+                },
+                {
+                    question_vi: "Tại sao việc tách bạch nhiệm vụ lập trình ra khỏi nhiệm vụ vận hành máy tính (nhờ sự ra đời của ngôn ngữ bậc cao ở thế hệ thứ 2) lại là một bước tiến quan trọng?",
+                    options_vi: ["Vì nó giúp máy tính chạy nhanh hơn.", "Vì nó cho phép các chuyên gia trong lĩnh vực khác (như kỹ sư xây dựng) có thể tự viết chương trình giải quyết vấn đề của họ mà không cần biết chi tiết về phần cứng.", "Vì nó làm giảm giá thành của máy tính.", "Vì nó giúp máy tính tiêu thụ ít điện năng hơn."],
+                    answer_vi: "Vì nó cho phép các chuyên gia trong lĩnh vực khác (như kỹ sư xây dựng) có thể tự viết chương trình giải quyết vấn đề của họ mà không cần biết chi tiết về phần cứng.",
+                    tip_vi: "Nhờ ngôn ngữ bậc cao, một kỹ sư xây dựng có thể lập trình mà không cần phải là chuyên gia về phần cứng máy tính.",
+                    question_en: "Why was separating the task of programming from the task of operating the computer (thanks to high-level languages in the 2nd Gen) an important step?",
+                    options_en: ["Because it made computers run faster.", "Because it allowed experts in other fields (like civil engineers) to write their own programs without needing to know hardware details.", "Because it reduced the cost of computers.", "Because it made computers consume less power."],
+                    answer_en: "Because it allowed experts in other fields (like civil engineers) to write their own programs without needing to know hardware details.",
+                    tip_en: "Thanks to high-level languages, a civil engineer could program without having to be a computer hardware expert."
+                },
+                {
+                    question_vi: "Nếu một máy tính không có Đơn vị Điều khiển (Control Unit), điều gì sẽ xảy ra?",
+                    options_vi: ["Máy tính không thể thực hiện phép cộng.", "Máy tính không thể lưu trữ dữ liệu.", "Máy tính không thể nạp, giải mã hay thực thi bất kỳ chỉ thị nào từ chương trình.", "Máy tính không thể hiển thị kết quả ra màn hình."],
+                    answer_vi: "Máy tính không thể nạp, giải mã hay thực thi bất kỳ chỉ thị nào từ chương trình.",
+                    tip_vi: "Không có Control Unit, máy tính như một dàn nhạc không có nhạc trưởng, không biết phải làm gì tiếp theo.",
+                    question_en: "What would happen if a computer had no Control Unit?",
+                    options_en: ["The computer could not perform addition.", "The computer could not store data.", "The computer could not fetch, decode, or execute any instructions from a program.", "The computer could not display results on the screen."],
+                    answer_en: "The computer could not fetch, decode, or execute any instructions from a program.",
+                    tip_en: "Without a Control Unit, the computer is like an orchestra without a conductor; it doesn't know what to do next."
+                },
+                {
+                    question_vi: "Nếu một máy tính không có Đơn vị Số học & Logic (ALU), nó sẽ không thể làm gì?",
+                    options_vi: ["Không thể nạp chương trình vào bộ nhớ.", "Không thể thực hiện các phép tính như cộng, trừ hay so sánh hai số.", "Không thể nhận dữ liệu từ bàn phím.", "Không thể điều khiển các thành phần khác."],
+                    answer_vi: "Không thể thực hiện các phép tính như cộng, trừ hay so sánh hai số.",
+                    tip_vi: "Không có ALU, máy tính chỉ có thể di chuyển và lưu trữ dữ liệu, chứ không thể 'tính toán' hay 'suy luận' logic.",
+                    question_en: "What would a computer be unable to do without an Arithmetic & Logic Unit (ALU)?",
+                    options_en: ["It could not load a program into memory.", "It could not perform calculations like addition, subtraction, or comparing two numbers.", "It could not receive data from the keyboard.", "It could not control other components."],
+                    answer_en: "It could not perform calculations like addition, subtraction, or comparing two numbers.",
+                    tip_en: "Without an ALU, a computer could move and store data, but it could not 'compute' or perform logical 'reasoning'."
+                },
+                {
+                    question_vi: "Việc phát minh ra mạch tích hợp (IC) có tác động lớn nhất đến khía cạnh nào của máy tính?",
+                    options_vi: ["Giảm đáng kể kích thước và giá thành.", "Tăng kích thước của máy tính.", "Làm cho lập trình trở nên khó hơn.", "Loại bỏ sự cần thiết của hệ điều hành."],
+                    answer_vi: "Giảm đáng kể kích thước và giá thành.",
+                    tip_vi: "IC cho phép đóng gói hàng ngàn (sau này là hàng tỷ) bóng bán dẫn vào một không gian nhỏ, tạo ra cuộc cách mạng thu nhỏ.",
+                    question_en: "The invention of the integrated circuit (IC) had the greatest impact on which aspect of computers?",
+                    options_en: ["Drastically reducing size and cost.", "Increasing the size of computers.", "Making programming more difficult.", "Eliminating the need for an operating system."],
+                    answer_en: "Drastically reducing size and cost.",
+                    tip_en: "ICs allowed for packing thousands (and later billions) of transistors into a tiny space, creating a miniaturization revolution."
+                },
+                {
+                    question_vi: "'Một máy tính không thể giải quyết một vấn đề không có lời giải.' Phát biểu này ám chỉ điều gì?",
+                    options_vi: ["Máy tính có giới hạn và chỉ có thể thực hiện những gì có thể tính toán được (computable).", "Phần cứng máy tính thường xuyên bị lỗi.", "Lập trình viên luôn viết code sai.", "Máy tính cần được nâng cấp liên tục."],
+                    answer_vi: "Máy tính có giới hạn và chỉ có thể thực hiện những gì có thể tính toán được (computable).",
+                    tip_vi: "Đây là một khái niệm cốt lõi trong lý thuyết tính toán. Không phải vấn đề nào cũng có thể giải được bằng thuật toán.",
+                    question_en: "'A computer cannot solve an unsolvable problem.' What does this statement imply?",
+                    options_en: ["Computers have limits and can only perform what is computable.", "Computer hardware frequently fails.", "Programmers always write incorrect code.", "Computers need to be constantly upgraded."],
+                    answer_en: "Computers have limits and can only perform what is computable.",
+                    tip_en: "This is a core concept in computability theory. Not all problems can be solved by an algorithm."
+                },
+                {
+                    question_vi: "Theo kiến trúc Von Neumann, điều nào sau đây KHÔNG đúng?",
+                    options_vi: ["Dữ liệu và chỉ thị được lưu trong cùng một bộ nhớ.", "Bộ nhớ có thể được truy cập theo địa chỉ.", "Các chỉ thị được thực thi song song cùng lúc.", "Có một đơn vị điều khiển để điều phối hoạt động."],
+                    answer_vi: "Các chỉ thị được thực thi song song cùng lúc.",
+                    tip_vi: "Kiến trúc Von Neumann cổ điển thực thi các chỉ thị một cách 'tuần tự' (lần lượt), không phải song song.",
+                    question_en: "According to the Von Neumann architecture, which of the following is NOT true?",
+                    options_en: ["Data and instructions are stored in the same memory.", "Memory can be addressed.", "Instructions are executed in parallel at the same time.", "There is a control unit to coordinate operations."],
+                    answer_en: "Instructions are executed in parallel at the same time.",
+                    tip_en: "The classic Von Neumann architecture executes instructions 'sequentially' (one by one), not in parallel."
+                },
+                {
                     question_vi: "Sắp xếp các công nghệ sau theo thứ tự xuất hiện trong lịch sử: (1) Mạch tích hợp, (2) Vi xử lý, (3) Bóng bán dẫn, (4) Bóng đèn chân không.",
                     options_vi: ["1, 2, 3, 4", "4, 3, 1, 2", "3, 4, 1, 2", "4, 3, 2, 1"],
                     answer_vi: "4, 3, 1, 2",
@@ -314,10 +958,328 @@
                     options_en: ["1, 2, 3, 4", "4, 3, 1, 2", "3, 4, 1, 2", "4, 3, 2, 1"],
                     answer_en: "4, 3, 1, 2",
                     tip_en: "The order of generations: (4) Vacuum Tube (1st Gen) -> (3) Transistor (2nd Gen) -> (1) Integrated Circuit (3rd Gen) -> (2) Microprocessor (4th Gen)."
+                },
+                {
+                    question_vi: "Máy tính ngày nay về cơ bản vẫn tuân theo mô hình nào?",
+                    options_vi: ["Chỉ mô hình Turing", "Mô hình Von Neumann", "Mô hình của Pascal", "Mô hình của Babbage"],
+                    answer_vi: "Mô hình Von Neumann",
+                    tip_vi: "Kiến trúc với CPU, Memory, I/O và chương trình lưu trong bộ nhớ vẫn là nền tảng của hầu hết máy tính hiện đại.",
+                    question_en: "Modern computers are still fundamentally based on which model?",
+                    options_en: ["Only the Turing model", "The Von Neumann model", "Pascal's model", "Babbage's model"],
+                    answer_en: "The Von Neumann model",
+                    tip_en: "The architecture with a CPU, Memory, I/O, and a stored program in memory remains the foundation of most modern computers."
+                },
+                {
+                    question_vi: "'Software' trở thành một ngành công nghiệp riêng biệt trong thế hệ máy tính nào?",
+                    options_vi: ["Thế hệ 1", "Thế hệ 2", "Thế hệ 3", "Thế hệ 4"],
+                    answer_vi: "Thế hệ 3",
+                    tip_vi: "Khi phần cứng (minicomputer) trở nên phổ biến hơn, nhu cầu về phần mềm tăng vọt, tạo ra một ngành công nghiệp mới.",
+                    question_en: "In which computer generation did 'Software' become a distinct industry?",
+                    options_en: ["1st Generation", "2nd Generation", "3rd Generation", "4th Generation"],
+                    answer_en: "3rd Generation",
+                    tip_en: "As hardware (minicomputers) became more common, the demand for software soared, creating a new industry."
+                },
+                {
+                    question_vi: "Sự kiện nào đánh dấu sự khởi đầu của kỷ nguyên máy tính cá nhân (PC)?",
+                    options_vi: ["Phát minh ra bóng bán dẫn", "Chế tạo máy ENIAC", "Sự ra đời của vi xử lý và các máy microcomputer", "Phát minh ra Internet"],
+                    answer_vi: "Sự ra đời của vi xử lý và các máy microcomputer",
+                    tip_vi: "Vi xử lý (Microprocessor) đã làm cho CPU đủ nhỏ và rẻ để tích hợp vào một máy tính cho người dùng cá nhân.",
+                    question_en: "Which event marked the beginning of the personal computer (PC) era?",
+                    options_en: ["The invention of the transistor", "The construction of the ENIAC", "The advent of the microprocessor and microcomputers", "The invention of the Internet"],
+                    answer_en: "The advent of the microprocessor and microcomputers",
+                    tip_en: "The microprocessor made the CPU small and cheap enough to be integrated into a computer for personal use."
+                },
+                {
+                    question_vi: "Đâu là ví dụ về một 'thuật toán'?",
+                    options_vi: ["Ngôn ngữ lập trình Java", "Hệ điều hành Windows 11", "Công thức nấu một món ăn", "Chương trình Microsoft Excel"],
+                    answer_vi: "Công thức nấu một món ăn",
+                    tip_vi: "Công thức nấu ăn là một chuỗi các bước hữu hạn để giải quyết vấn đề 'làm thế nào để nấu món này', đây chính là bản chất của thuật toán.",
+                    question_en: "Which of the following is an example of an 'algorithm'?",
+                    options_en: ["The Java programming language", "The Windows 11 operating system", "A recipe for cooking a dish", "The Microsoft Excel program"],
+                    answer_en: "A recipe for cooking a dish",
+                    tip_en: "A recipe is a finite sequence of steps to solve the problem of 'how to cook this dish', which is the essence of an algorithm."
+                },
+                {
+                    question_vi: "Tại sao máy tính sử dụng hệ nhị phân (binary system) thay vì hệ thập phân (decimal system) quen thuộc?",
+                    options_vi: ["Vì hệ nhị phân dễ tính toán hơn cho con người.", "Vì các linh kiện điện tử trong máy tính hoạt động dựa trên hai trạng thái ổn định (Bật/Tắt, Có điện/Không có điện), tương ứng với 1 và 0.", "Vì Alan Turing đã quy định như vậy.", "Vì hệ thập phân chiếm nhiều dung lượng lưu trữ hơn."],
+                    answer_vi: "Vì các linh kiện điện tử trong máy tính hoạt động dựa trên hai trạng thái ổn định (Bật/Tắt, Có điện/Không có điện), tương ứng với 1 và 0.",
+                    tip_vi: "Đối với mạch điện, việc phân biệt hai trạng thái (có điện / không có điện) là đơn giản và đáng tin cậy nhất.",
+                    question_en: "Why do computers use the binary system instead of the familiar decimal system?",
+                    options_en: ["Because binary is easier for humans to calculate.", "Because electronic components in computers operate based on two stable states (On/Off, Voltage/No Voltage), corresponding to 1 and 0.", "Because Alan Turing decreed it so.", "Because the decimal system takes up more storage space."],
+                    answer_en: "Because electronic components in computers operate based on two stable states (On/Off, Voltage/No Voltage), corresponding to 1 and 0.",
+                    tip_en: "For electronic circuits, distinguishing between two states (voltage/no voltage) is the simplest and most reliable method."
+                },
+                {
+                    question_vi: "Vai trò của người lập trình (programmer) là gì?",
+                    options_vi: ["Thiết kế phần cứng máy tính.", "Thiết kế thuật toán để giải quyết vấn đề và sau đó viết chương trình dựa trên thuật toán đó.", "Vận hành và bảo trì máy tính.", "Sử dụng các phần mềm ứng dụng."],
+                    answer_vi: "Thiết kế thuật toán để giải quyết vấn đề và sau đó viết chương trình dựa trên thuật toán đó.",
+                    tip_vi: "Lập trình viên là người biến giải pháp (thuật toán) thành một sản phẩm chạy được (chương trình).",
+                    question_en: "What is the role of a programmer?",
+                    options_en: ["To design computer hardware.", "To design an algorithm to solve a problem and then write a program based on that algorithm.", "To operate and maintain computers.", "To use application software."],
+                    answer_en: "To design an algorithm to solve a problem and then write a program based on that algorithm.",
+                    tip_en: "A programmer is someone who turns a solution (algorithm) into a runnable product (program)."
+                },
+                {
+                    question_vi: "Trong kiến trúc Von Neumann, CPU (Central Processing Unit) bao gồm những thành phần nào?",
+                    options_vi: ["ALU và Control Unit", "Memory và I/O", "ALU và Memory", "Control Unit và I/O"],
+                    answer_vi: "ALU và Control Unit",
+                    tip_vi: "CPU được tạo thành từ 'bộ não' (Control Unit) và 'máy tính' (ALU).",
+                    question_en: "In the Von Neumann architecture, what components does the CPU (Central Processing Unit) consist of?",
+                    options_en: ["ALU and Control Unit", "Memory and I/O", "ALU and Memory", "Control Unit and I/O"],
+                    answer_en: "ALU and Control Unit",
+                    tip_en: "The CPU is made up of the 'brain' (Control Unit) and the 'calculator' (ALU)."
+                },
+                {
+                    question_vi: "Khi bạn khởi động máy tính, hệ điều hành được nạp từ đâu vào đâu?",
+                    options_vi: ["Từ CPU vào RAM", "Từ ổ đĩa cứng (thiết bị lưu trữ) vào RAM (bộ nhớ chính)", "Từ RAM vào CPU", "Từ RAM vào ổ đĩa cứng"],
+                    answer_vi: "Từ ổ đĩa cứng (thiết bị lưu trữ) vào RAM (bộ nhớ chính)",
+                    tip_vi: "Hệ điều hành được lưu trữ lâu dài trên ổ cứng và được nạp vào RAM (bộ nhớ làm việc) khi máy tính khởi động.",
+                    question_en: "When you boot up a computer, where is the operating system loaded from and to?",
+                    options_en: ["From CPU to RAM", "From the hard disk (storage device) to RAM (main memory)", "From RAM to CPU", "From RAM to the hard disk"],
+                    answer_en: "From the hard disk (storage device) to RAM (main memory)",
+                    tip_en: "The OS is stored long-term on the hard disk and is loaded into RAM (the working memory) when the computer starts."
+                },
+                {
+                    question_vi: "'Virtual reality' (thực tế ảo) là một hiện tượng nổi bật của thế hệ máy tính nào?",
+                    options_vi: ["Thế hệ 2", "Thế hệ 3", "Thế hệ 4", "Thế hệ 5"],
+                    answer_vi: "Thế hệ 5",
+                    tip_vi: "Thế hệ 5 (hiện tại) được đặc trưng bởi sức mạnh đồ họa, kết nối mạng tốc độ cao và AI, là nền tảng cho VR/AR.",
+                    question_en: "Virtual reality (VR) is a prominent phenomenon of which computer generation?",
+                    options_en: ["2nd Generation", "3rd Generation", "4th Generation", "5th Generation"],
+                    answer_en: "5th Generation",
+                    tip_en: "The 5th (current) generation is characterized by powerful graphics, high-speed networking, and AI, which are the foundations for VR/AR."
+                },
+                {
+                    question_vi: "Đâu KHÔNG phải là một đặc điểm của máy tính thế hệ thứ nhất?",
+                    options_vi: ["Kích thước lớn, cồng kềnh", "Sử dụng bóng đèn chân không", "Giá thành rẻ, dành cho người dùng cá nhân", "Tiêu thụ nhiều năng lượng và tỏa nhiều nhiệt"],
+                    answer_vi: "Giá thành rẻ, dành cho người dùng cá nhân",
+                    tip_vi: "Máy tính thế hệ đầu tiên cực kỳ đắt đỏ, chỉ dành cho chính phủ và các tổ chức lớn.",
+                    question_en: "Which of the following is NOT a characteristic of first-generation computers?",
+                    options_en: ["Large and bulky size", "Use of vacuum tubes", "Low cost, intended for individual users", "Consumed a lot of energy and generated a lot of heat"],
+                    answer_en: "Low cost, intended for individual users",
+                    tip_en: "First-generation computers were extremely expensive, reserved for governments and large organizations."
+                },
+                {
+                    question_vi: "Việc phát minh ra ngôn ngữ lập trình bậc cao đã giúp ích gì?",
+                    options_vi: ["Giúp con người viết chương trình dễ dàng hơn, gần với ngôn ngữ tự nhiên hơn so với ngôn ngữ máy.", "Làm cho chương trình chạy nhanh hơn.", "Giảm kích thước của phần cứng.", "Loại bỏ hoàn toàn lỗi trong chương trình."],
+                    answer_vi: "Giúp con người viết chương trình dễ dàng hơn, gần với ngôn ngữ tự nhiên hơn so với ngôn ngữ máy.",
+                    tip_vi: "Ngôn ngữ bậc cao cho phép lập trình viên tập trung vào giải quyết vấn đề thay vì phải ghi nhớ các mã nhị phân phức tạp.",
+                    question_en: "How did the invention of high-level programming languages help?",
+                    options_en: ["It made it easier for people to write programs, using language closer to natural language than machine code.", "It made programs run faster.", "It reduced the size of hardware.", "It completely eliminated errors in programs."],
+                    answer_en: "It made it easier for people to write programs, using language closer to natural language than machine code.",
+                    tip_en: "High-level languages allow programmers to focus on problem-solving instead of memorizing complex binary codes."
+                },
+                {
+                    question_vi: "Điều gì định nghĩa một máy tính là 'đa năng' (general-purpose)?",
+                    options_vi: ["Nó có thể thực hiện nhiều loại tác vụ khác nhau bằng cách thay đổi chương trình.", "Nó có kích thước rất lớn.", "Nó được chế tạo bởi một công ty nổi tiếng.", "Nó chỉ có thể thực hiện một tác vụ duy nhất."],
+                    answer_vi: "Nó có thể thực hiện nhiều loại tác vụ khác nhau bằng cách thay đổi chương trình.",
+                    tip_vi: "Smartphone của bạn là một máy tính đa năng: bạn có thể dùng nó để gọi điện, lướt web, chơi game... bằng cách chạy các chương trình (apps) khác nhau.",
+                    question_en: "What defines a computer as 'general-purpose'?",
+                    options_en: ["It can perform many different types of tasks by changing the program.", "It is very large in size.", "It is made by a famous company.", "It can only perform a single task."],
+                    answer_en: "It can perform many different types of tasks by changing the program.",
+                    tip_en: "Your smartphone is a general-purpose computer: you can use it to call, browse the web, play games... by running different programs (apps)."
+                },
+                {
+                    question_vi: "'Computer Science' (Khoa học máy tính) là ngành học nghiên cứu về...?",
+                    options_vi: ["Chỉ cách sử dụng máy tính.", "Các vấn đề liên quan đến máy tính, bao gồm cả lý thuyết, phần cứng, phần mềm và ứng dụng.", "Chỉ cách sửa chữa phần cứng.", "Chỉ cách thiết kế website."],
+                    answer_vi: "Các vấn đề liên quan đến máy tính, bao gồm cả lý thuyết, phần cứng, phần mềm và ứng dụng.",
+                    tip_vi: "Khoa học máy tính là một ngành khoa học sâu rộng, không chỉ là kỹ năng sử dụng máy tính.",
+                    question_en: "Computer Science is the study of...?",
+                    options_en: ["Only how to use computers.", "Problems related to computers, including theory, hardware, software, and applications.", "Only how to repair hardware.", "Only how to design websites."],
+                    answer_en: "Problems related to computers, including theory, hardware, software, and applications.",
+                    tip_en: "Computer Science is a broad scientific field, not just the skill of using a computer."
+                },
+                {
+                    question_vi: "Theo mô hình trong sách, khi bạn sắp xếp một dãy số, 'chương trình' là gì?",
+                    options_vi: ["Dãy số ban đầu", "Dãy số đã được sắp xếp", "Thuật toán sắp xếp (ví dụ: Sort)", "Máy tính"],
+                    answer_vi: "Thuật toán sắp xếp (ví dụ: Sort)",
+                    tip_vi: "Chương trình là tập hợp các chỉ thị để thực hiện một tác vụ. Trong trường hợp này, đó là thuật toán sắp xếp.",
+                    question_en: "According to the model in the book, when you sort a list of numbers, what is the 'program'?",
+                    options_en: ["The original list of numbers", "The sorted list of numbers", "The sorting algorithm (e.g., Sort)", "The computer"],
+                    answer_en: "The sorting algorithm (e.g., Sort)",
+                    tip_en: "The program is the set of instructions to perform a task. In this case, that's the sorting algorithm."
+                },
+                {
+                    question_vi: "Trong mô hình Von Neumann, khi một lệnh được thực thi, đơn vị điều khiển (CU) sẽ làm gì ĐẦU TIÊN?",
+                    options_vi: ["Thực thi lệnh (Execute)", "Giải mã lệnh (Decode)", "Nạp lệnh từ bộ nhớ (Fetch)", "Lưu kết quả"],
+                    answer_vi: "Nạp lệnh từ bộ nhớ (Fetch)",
+                    tip_vi: "Chu trình của CPU là Fetch -> Decode -> Execute. Bước đầu tiên luôn là lấy lệnh từ bộ nhớ.",
+                    question_en: "In the Von Neumann model, when an instruction is executed, what does the Control Unit (CU) do FIRST?",
+                    options_en: ["Execute the instruction", "Decode the instruction", "Fetch the instruction from memory", "Store the result"],
+                    answer_en: "Fetch the instruction from memory",
+                    tip_en: "The CPU cycle is Fetch -> Decode -> Execute. The first step is always to get the instruction from memory."
+                },
+                {
+                    question_vi: "Mối quan hệ giữa dữ liệu và thông tin là gì?",
+                    options_vi: ["Chúng là một.", "Dữ liệu là các sự kiện, con số thô; thông tin là dữ liệu đã được xử lý để trở nên có ý nghĩa.", "Thông tin là đầu vào, dữ liệu là đầu ra.", "Chúng không liên quan."],
+                    answer_vi: "Dữ liệu là các sự kiện, con số thô; thông tin là dữ liệu đã được xử lý để trở nên có ý nghĩa.",
+                    tip_vi: "Dữ liệu là '37'. Thông tin là 'Nhiệt độ cơ thể của bệnh nhân là 37 độ C'.",
+                    question_en: "What is the relationship between data and information?",
+                    options_en: ["They are the same.", "Data is raw facts and figures; information is data that has been processed to become meaningful.", "Information is input, data is output.", "They are unrelated."],
+                    answer_en: "Data is raw facts and figures; information is data that has been processed to become meaningful.",
+                    tip_en: "Data is '37'. Information is 'The patient's body temperature is 37 degrees Celsius'."
+                },
+                {
+                    question_vi: "'Stored-program concept' cho phép máy tính làm gì mà các máy tính trước đó không thể?",
+                    options_vi: ["Thực hiện phép cộng.", "Nạp và thực thi các chương trình khác nhau một cách nhanh chóng mà không cần thay đổi phần cứng.", "In kết quả ra giấy.", "Sử dụng điện năng."],
+                    answer_vi: "Nạp và thực thi các chương trình khác nhau một cách nhanh chóng mà không cần thay đổi phần cứng.",
+                    tip_vi: "Trước đó (như ENIAC), để 'thay đổi chương trình', người ta phải đi dây lại bằng tay, rất tốn thời gian. Stored-program cho phép thay đổi chỉ bằng cách nạp phần mềm.",
+                    question_en: "What did the 'stored-program concept' allow computers to do that previous machines could not?",
+                    options_en: ["Perform addition.", "Quickly load and execute different programs without hardware changes.", "Print results on paper.", "Use electricity."],
+                    answer_en: "Quickly load and execute different programs without hardware changes.",
+                    tip_en: "Previously (like on ENIAC), 'changing the program' required manual rewiring, which was very time-consuming. The stored-program concept allowed changes just by loading software."
+                },
+                {
+                    question_vi: "Tại sao Analytical Engine của Babbage được coi là có tính 'hoàn chỉnh' hơn các máy tính cơ học trước đó?",
+                    options_vi: ["Vì nó là máy đầu tiên được chế tạo.", "Vì nó có đầy đủ các thành phần chức năng của một máy tính hiện đại (ALU, memory, control, I/O).", "Vì nó chạy bằng hơi nước.", "Vì nó có thể giải mọi bài toán."],
+                    answer_vi: "Vì nó có đầy đủ các thành phần chức năng của một máy tính hiện đại (ALU, memory, control, I/O).",
+                    tip_vi: "Dù chỉ là trên bản thiết kế, Analytical Engine đã có một kiến trúc hoàn chỉnh đáng kinh ngạc, đi trước thời đại cả một thế kỷ.",
+                    question_en: "Why is Babbage's Analytical Engine considered more 'complete' than previous mechanical calculators?",
+                    options_en: ["Because it was the first one built.", "Because it had all the functional components of a modern computer (ALU, memory, control, I/O).", "Because it was steam-powered.", "Because it could solve any problem."],
+                    answer_en: "Because it had all the functional components of a modern computer (ALU, memory, control, I/O).",
+                    tip_en: "Even though it was only a design, the Analytical Engine had an incredibly complete architecture, a century ahead of its time."
+                },
+                {
+                    question_vi: "Máy tính ENIAC nặng 30 tấn và sử dụng 18,000 bóng đèn chân không. Nó thuộc thế hệ máy tính nào?",
+                    options_vi: ["Thế hệ cơ học", "Giai đoạn máy tính điện tử sơ khai (trước các thế hệ)", "Thế hệ 1", "Thế hệ 2"],
+                    answer_vi: "Giai đoạn máy tính điện tử sơ khai (trước các thế hệ)",
+                    tip_vi: "ENIAC (1946) ra đời trước mốc thời gian của Thế hệ 1 (1950) và chưa theo kiến trúc Von Neumann.",
+                    question_en: "The ENIAC computer weighed 30 tons and used 18,000 vacuum tubes. To which generation does it belong?",
+                    options_en: ["Mechanical Generation", "Early Electronic Computing Era (pre-generations)", "1st Generation", "2nd Generation"],
+                    answer_en: "Early Electronic Computing Era (pre-generations)",
+                    tip_en: "ENIAC (1946) predates the timeline for the 1st Generation (1950s) and was not a Von Neumann architecture machine."
+                },
+                {
+                    question_vi: "Sự khác biệt chính giữa 'minicomputer' (thế hệ 3) và 'microcomputer' (thế hệ 4) là gì?",
+                    options_vi: ["Minicomputer dùng bóng bán dẫn, microcomputer dùng IC.", "Minicomputer dùng cho các doanh nghiệp nhỏ, microcomputer là máy tính cá nhân dựa trên vi xử lý.", "Không có sự khác biệt.", "Minicomputer nhanh hơn microcomputer."],
+                    answer_vi: "Minicomputer dùng cho các doanh nghiệp nhỏ, microcomputer là máy tính cá nhân dựa trên vi xử lý.",
+                    tip_vi: "Minicomputer (Thế hệ 3) vẫn còn khá lớn và dành cho tổ chức. Microcomputer (Thế hệ 4) với vi xử lý mới thực sự là máy tính 'cá nhân'.",
+                    question_en: "What is the main difference between a 'minicomputer' (3rd Gen) and a 'microcomputer' (4th Gen)?",
+                    options_en: ["Minicomputers used transistors, microcomputers used ICs.", "Minicomputers were for small businesses, microcomputers were personal computers based on microprocessors.", "There is no difference.", "Minicomputers were faster than microcomputers."],
+                    answer_en: "Minicomputers were for small businesses, microcomputers were personal computers based on microprocessors.",
+                    tip_en: "Minicomputers (3rd Gen) were still quite large and intended for organizations. Microcomputers (4th Gen) with microprocessors were the first true 'personal' computers."
+                },
+                {
+                    question_vi: "Cái nào sau đây là một ví dụ về lĩnh vực ứng dụng (Applications Area) của khoa học máy tính?",
+                    options_vi: ["Kiến trúc máy tính", "Hệ điều hành", "Trí tuệ nhân tạo (Artificial Intelligence)", "Ngôn ngữ lập trình"],
+                    answer_vi: "Trí tuệ nhân tạo (Artificial Intelligence)",
+                    tip_vi: "Lĩnh vực ứng dụng tập trung vào việc sử dụng máy tính để giải quyết các vấn đề trong thế giới thực, như AI, đồ họa, cơ sở dữ liệu.",
+                    question_en: "Which of the following is an example of an Applications Area of computer science?",
+                    options_en: ["Computer Architecture", "Operating Systems", "Artificial Intelligence", "Programming Languages"],
+                    answer_en: "Artificial Intelligence",
+                    tip_en: "Application areas focus on using computers to solve real-world problems, such as AI, graphics, and databases."
+                },
+                {
+                    question_vi: "Cái nào sau đây là một ví dụ về lĩnh vực hệ thống (Systems Area) của khoa học máy tính?",
+                    options_vi: ["Cơ sở dữ liệu", "Đồ họa máy tính", "Trí tuệ nhân tạo", "Thiết kế thuật toán"],
+                    answer_vi: "Thiết kế thuật toán",
+                    tip_vi: "Lĩnh vực Hệ thống bao gồm các chủ đề như kiến trúc máy tính, hệ điều hành, mạng. Thiết kế thuật toán thuộc lĩnh vực Lý thuyết.",
+                    question_en: "Which of the following is an example of a Systems Area of computer science?",
+                    options_en: ["Databases", "Computer Graphics", "Artificial Intelligence", "Algorithm Design"],
+                    answer_en: "Algorithm Design",
+                    tip_en: "The Systems area includes topics like architecture, OS, and networks. Algorithm design belongs to the Theoretical area."
+                },
+                {
+                    question_vi: "Điều gì xảy ra nếu cả chương trình và dữ liệu đầu vào đều không thay đổi?",
+                    options_vi: ["Đầu ra sẽ luôn khác nhau.", "Đầu ra sẽ luôn giống nhau.", "Máy tính sẽ bị treo.", "Không thể dự đoán được."],
+                    answer_vi: "Đầu ra sẽ luôn giống nhau.",
+                    tip_vi: "Máy tính là một cỗ máy tất định. Với cùng một chương trình và cùng một đầu vào, nó sẽ luôn cho ra cùng một kết quả.",
+                    question_en: "What happens if neither the program nor the input data changes?",
+                    options_en: ["The output will always be different.", "The output will always be the same.", "The computer will crash.", "It cannot be predicted."],
+                    answer_en: "The output will always be the same.",
+                    tip_en: "A computer is a deterministic machine. With the same program and the same input, it will always produce the same output."
+                },
+                {
+                    question_vi: "Lập trình cho máy tính thế hệ đầu tiên là một công việc của ai?",
+                    options_vi: ["Người dùng thông thường", "Chỉ các nhà toán học", "Các chuyên gia, nhà khoa học và kỹ sư vận hành máy", "Sinh viên"],
+                    answer_vi: "Các chuyên gia, nhà khoa học và kỹ sư vận hành máy",
+                    tip_vi: "Việc lập trình và vận hành máy tính thế hệ đầu đòi hỏi kiến thức chuyên sâu và rất phức tạp.",
+                    question_en: "Programming a first-generation computer was a job for whom?",
+                    options_en: ["Regular users", "Only mathematicians", "Specialists, scientists, and engineers who operated the machine", "Students"],
+                    answer_en: "Specialists, scientists, and engineers who operated the machine",
+                    tip_en: "Programming and operating first-generation computers required deep, complex expertise."
+                },
+                {
+                    question_vi: "'Input/Output' trong Analytical Engine của Babbage được thực hiện thông qua đâu?",
+                    options_vi: ["Màn hình và bàn phím", "Bìa đục lỗ và máy in", "Công tắc và đèn", "Chuột và loa"],
+                    answer_vi: "Bìa đục lỗ và máy in",
+                    tip_vi: "Babbage đã sử dụng công nghệ bìa đục lỗ, một công nghệ rất tiên tiến thời bấy giờ, cho cả việc nhập liệu và xuất kết quả.",
+                    question_en: "How was 'Input/Output' handled in Babbage's Analytical Engine?",
+                    options_en: ["Monitor and keyboard", "Punched cards and a printer", "Switches and lights", "Mouse and speakers"],
+                    answer_en: "Punched cards and a printer",
+                    tip_en: "Babbage used punched card technology, which was very advanced for its time, for both input and output."
+                },
+                {
+                    question_vi: "Tại sao máy tính ngày nay có thể nhảy đến các phần khác của chương trình thay vì chỉ thực thi tuần tự?",
+                    options_vi: ["Vì ALU có thể thay đổi thứ tự lệnh.", "Vì một chỉ thị có thể yêu cầu đơn vị điều khiển (CU) nhảy đến một chỉ thị khác.", "Vì bộ nhớ có thể tự sắp xếp lại các lệnh.", "Máy tính ngày nay không thể làm điều đó, chúng luôn thực thi tuần tự."],
+                    answer_vi: "Vì một chỉ thị có thể yêu cầu đơn vị điều khiển (CU) nhảy đến một chỉ thị khác.",
+                    tip_vi: "Các lệnh 'nhảy' (jump) hoặc 'rẽ nhánh' (branch) là nền tảng cho các cấu trúc điều khiển như vòng lặp (for, while) và câu lệnh điều kiện (if-else).",
+                    question_en: "Why can modern computers jump to other parts of a program instead of only executing sequentially?",
+                    options_en: ["Because the ALU can change the instruction order.", "Because an instruction can tell the Control Unit (CU) to jump to another instruction.", "Because memory can reorder the instructions.", "Modern computers can't do that, they always execute sequentially."],
+                    answer_en: "Because an instruction can tell the Control Unit (CU) to jump to another instruction.",
+                    tip_en: " 'Jump' or 'branch' instructions are the foundation for control structures like loops (for, while) and conditionals (if-else)."
+                },
+                {
+                    question_vi: "Sự phát triển của mạng máy tính là một đặc điểm nổi bật của thế hệ nào?",
+                    options_vi: ["Thế hệ 2", "Thế hệ 3", "Thế hệ 4", "Thế hệ 5"],
+                    answer_vi: "Thế hệ 5",
+                    tip_vi: "Mặc dù mạng bắt đầu từ thế hệ 3-4, nhưng nó thực sự bùng nổ và trở thành trung tâm của điện toán trong thế hệ 5 với sự ra đời của Internet.",
+                    question_en: "The development of computer networks is a prominent feature of which generation?",
+                    options_en: ["2nd Generation", "3rd Generation", "4th Generation", "5th Generation"],
+                    answer_en: "5th Generation",
+                    tip_en: "Although networking began in the 3rd-4th generations, it truly exploded and became central to computing in the 5th generation with the Internet."
+                },
+                {
+                    question_vi: "Cái nào sau đây mô tả đúng nhất về 'firmware'?",
+                    options_vi: ["Một loại phần cứng.", "Một loại phần mềm ứng dụng.", "Phần mềm được nhúng vĩnh viễn vào một thiết bị phần cứng (ví dụ: BIOS trong máy tính).", "Một loại hệ điều hành."],
+                    answer_vi: "Phần mềm được nhúng vĩnh viễn vào một thiết bị phần cứng (ví dụ: BIOS trong máy tính).",
+                    tip_vi: "'Firmware' là phần mềm 'cứng', nằm giữa phần cứng và phần mềm hệ thống, giúp khởi tạo thiết bị.",
+                    question_en: "Which of the following best describes 'firmware'?",
+                    options_en: ["A type of hardware.", "A type of application software.", "Software permanently embedded in a hardware device (e.g., a computer's BIOS).", "A type of operating system."],
+                    answer_en: "Software permanently embedded in a hardware device (e.g., a computer's BIOS).",
+                    tip_en: "'Firmware' is 'firm' software that sits between hardware and system software, helping to initialize the device."
+                },
+                {
+                    question_vi: "Sự kiện phát minh ra bóng bán dẫn đã dẫn đến việc trao giải Nobel Vật lý cho ai? (Câu hỏi này nằm ngoài sách nhưng liên quan trực tiếp).",
+                    options_vi: ["Alan Turing và John von Neumann", "John Bardeen, Walter Brattain, và William Shockley", "Charles Babbage", "Bill Gates và Steve Jobs"],
+                    answer_vi: "John Bardeen, Walter Brattain, và William Shockley",
+                    tip_vi: "Đây là một trong những phát minh quan trọng nhất thế kỷ 20, được vinh danh bằng giải Nobel Vật lý năm 1956.",
+                    question_en: "The invention of the transistor led to a Nobel Prize in Physics for whom? (This question is outside the book but directly related).",
+                    options_en: ["Alan Turing and John von Neumann", "John Bardeen, Walter Brattain, and William Shockley", "Charles Babbage", "Bill Gates and Steve Jobs"],
+                    answer_en: "John Bardeen, Walter Brattain, and William Shockley",
+                    tip_en: "This was one of the most important inventions of the 20th century, honored with the Nobel Prize in Physics in 1956."
+                },
+                {
+                    question_vi: "Sắp xếp các thiết bị/công nghệ sau theo thứ tự mức độ trừu tượng hóa khi lập trình (từ thấp đến cao):",
+                    options_vi: ["Ngôn ngữ bậc cao -> Ngôn ngữ máy -> Phần cứng", "Ngôn ngữ máy -> Phần cứng -> Ngôn ngữ bậc cao", "Phần cứng -> Ngôn ngữ máy -> Ngôn ngữ bậc cao", "Ngôn ngữ bậc cao -> Phần cứng -> Ngôn ngữ máy"],
+                    answer_vi: "Phần cứng -> Ngôn ngữ máy -> Ngôn ngữ bậc cao",
+                    tip_vi: "Mức độ trừu tượng hóa tăng dần: từ cái cụ thể nhất (phần cứng) đến cái gần với con người nhất (ngôn ngữ bậc cao).",
+                    question_en: "Arrange the following in order of programming abstraction level (from lowest to highest):",
+                    options_en: ["High-level language -> Machine language -> Hardware", "Machine language -> Hardware -> High-level language", "Hardware -> Machine language -> High-level language", "High-level language -> Hardware -> Machine language"],
+                    answer_en: "Hardware -> Machine language -> High-level language",
+                    tip_en: "Abstraction level increases from the most concrete (hardware) to the closest to human language (high-level language)."
+                },
+                {
+                    question_vi: "Trong bối cảnh hiện đại, 'cloud computing' (điện toán đám mây) là sự phát triển dựa trên nền tảng của công nghệ nào đã có từ trước?",
+                    options_vi: ["Máy tính lớn (Mainframes)", "Mạng máy tính và Internet", "Bóng đèn chân không", "Bìa đục lỗ"],
+                    answer_vi: "Mạng máy tính và Internet",
+                    tip_vi: "Đám mây về cơ bản là việc truy cập và sử dụng tài nguyên máy tính (phần cứng, phần mềm) từ xa thông qua Internet.",
+                    question_en: "In the modern context, 'cloud computing' is an evolution based on which pre-existing technology?",
+                    options_en: ["Mainframes", "Computer networks and the Internet", "Vacuum tubes", "Punched cards"],
+                    answer_en: "Computer networks and the Internet",
+                    tip_en: "The cloud is fundamentally about accessing and using computer resources (hardware, software) remotely via the Internet."
+                },
+                {
+                    question_vi: "Mục tiêu chính của chương 1 trong môn học CSI là gì?",
+                    options_vi: ["Dạy sinh viên lập trình bằng Java", "Cung cấp một cái nhìn tổng quan về máy tính là gì, các thành phần của nó và lịch sử phát triển.", "Hướng dẫn cách lắp ráp một máy tính cá nhân.", "Phân tích sâu về các thuật toán phức tạp."],
+                    answer_vi: "Cung cấp một cái nhìn tổng quan về máy tính là gì, các thành phần của nó và lịch sử phát triển.",
+                    tip_vi: "Chương 1 xây dựng nền tảng, cho bạn bức tranh toàn cảnh trước khi đi vào chi tiết ở các chương sau.",
+                    question_en: "What is the main objective of Chapter 1 in the CSI course?",
+                    options_en: ["To teach students how to program in Java", "To provide an overview of what a computer is, its components, and its history.", "To guide on how to assemble a personal computer.", "To deeply analyze complex algorithms."],
+                    answer_en: "To provide an overview of what a computer is, its components, and its history.",
+                    tip_en: "Chapter 1 builds the foundation, giving you the big picture before diving into details in later chapters."
                 }
             ];
-             // Để làm cho file không quá dài, tôi sẽ chỉ để lại một vài câu hỏi mẫu. 
-             // Bạn có thể dán toàn bộ 100 câu hỏi đã được định dạng song ngữ vào đây.
 
             // --- THAM CHIẾU ĐẾN CÁC PHẦN TỬ HTML ---
             const startScreen = document.getElementById('start-screen');
@@ -467,6 +1429,7 @@
             }
 
             function renderResults() {
+                if (!userAnswers) return; // Guard clause
                 const correctAnswersCount = userAnswers.filter(answer => answer.isCorrect).length;
                 scoreText.innerText = translations[currentLanguage].score_text
                     .replace('{score}', correctAnswersCount)
@@ -497,7 +1460,6 @@
                 langViBtn.classList.toggle('active', lang === 'vi');
                 langEnBtn.classList.toggle('active', lang === 'en');
                 
-                // Dịch các thành phần tĩnh
                 document.querySelectorAll('[data-key]').forEach(element => {
                     const key = element.getAttribute('data-key');
                     if (translations[lang][key]) {
@@ -505,7 +1467,6 @@
                     }
                 });
                 
-                // Re-render view hiện tại nếu đang trong quiz hoặc ở màn hình kết quả
                 if (!quizScreen.classList.contains('hidden')) {
                     rerenderQuizView();
                 }
@@ -515,58 +1476,61 @@
             }
 
             function rerenderQuizView() {
+                if(!quizQuestions || quizQuestions.length === 0) return;
+                
                 const currentQuestion = quizQuestions[currentQuestionIndex];
                  progressText.innerText = translations[currentLanguage].progress_text
                     .replace('{current}', currentQuestionIndex + 1)
                     .replace('{total}', quizQuestions.length);
                 questionText.innerText = currentQuestion['question_' + currentLanguage];
 
-                // Nếu câu hỏi chưa được trả lời, chỉ cần cập nhật options
-                if (optionsContainer.querySelector('button:not([disabled])')) {
-                     const newOptions = shuffle([...currentQuestion['options_' + currentLanguage]]);
-                     optionsContainer.childNodes.forEach((btn, i) => {
-                         btn.innerText = newOptions[i];
-                     });
-                } else { // Nếu đã trả lời, cập nhật mọi thứ, bao gồm cả feedback
-                    const lastAnswer = userAnswers[userAnswers.length - 1];
-                    const correctAnswer = currentQuestion['answer_' + currentLanguage];
+                const answerData = userAnswers[currentQuestionIndex];
+                const questionAnswered = !!answerData;
+
+                const newOptions = [...currentQuestion['options_' + currentLanguage]];
+                const correctAnswerText = currentQuestion['answer_' + currentLanguage];
+
+                optionsContainer.innerHTML = '';
+                shuffle(newOptions).forEach(opt => {
+                    const button = document.createElement('button');
+                    button.innerText = opt;
+                    button.classList.add('option-btn');
                     
-                    optionsContainer.childNodes.forEach(btn => {
-                        btn.innerText = "Option"; // Tạm thời, sẽ được cập nhật lại ngay sau
-                    });
-
-                    // Cần có một cách map lại các option cũ và mới, cách đơn giản nhất là render lại hoàn toàn
-                    const shuffledOptions = shuffle([...currentQuestion['options_' + currentLanguage]]);
-                    optionsContainer.innerHTML = '';
-                    shuffledOptions.forEach(opt => {
-                        const button = document.createElement('button');
-                        button.innerText = opt;
-                        button.classList.add('option-btn');
+                    if(questionAnswered) {
                         button.disabled = true;
-                        
-                        if (opt === correctAnswer) button.classList.add('correct');
-                        if (opt === lastAnswer.userAnswer) {
-                             if (!lastAnswer.isCorrect) button.classList.add('incorrect');
-                        }
-                        optionsContainer.appendChild(button);
-                    });
-
-                    feedbackText.innerText = lastAnswer.isCorrect ? translations[currentLanguage].feedback_correct : translations[currentLanguage].feedback_incorrect;
-                    if (!lastAnswer.isCorrect) {
-                        memoryTip.innerHTML = `<strong>${translations[currentLanguage].memory_tip_text}</strong> ${currentQuestion['tip_' + currentLanguage]}`;
+                        if(opt === correctAnswerText) button.classList.add('correct');
+                        if(opt === answerData.userAnswer && !answerData.isCorrect) button.classList.add('incorrect');
+                    } else {
+                        button.addEventListener('click', selectAnswer);
                     }
+                    optionsContainer.appendChild(button);
+                });
+
+                if (questionAnswered) {
+                    feedbackText.innerText = answerData.isCorrect ? translations[currentLanguage].feedback_correct : translations[currentLanguage].feedback_incorrect;
+                    feedbackText.className = answerData.isCorrect ? 'correct' : 'incorrect';
+                    if (!answerData.isCorrect) {
+                        memoryTip.innerHTML = `<strong>${translations[currentLanguage].memory_tip_text}</strong> ${currentQuestion['tip_' + currentLanguage]}`;
+                        memoryTip.classList.remove('hidden');
+                    }
+                    nextBtn.classList.remove('hidden');
                     if (currentQuestionIndex === quizQuestions.length - 1) {
                         nextBtn.innerText = translations[currentLanguage].finish_btn_text;
                     } else {
                         nextBtn.innerText = translations[currentLanguage].next_btn_text;
                     }
+                } else {
+                    resetState(); // handles hiding feedback etc.
+                    progressText.innerText = translations[currentLanguage].progress_text
+                        .replace('{current}', currentQuestionIndex + 1)
+                        .replace('{total}', quizQuestions.length);
+                    questionText.innerText = currentQuestion['question_' + currentLanguage];
                 }
             }
 
-            setLanguage('vi'); // Khởi tạo ngôn ngữ
+            setLanguage('vi'); 
         });
 
-        // --- HÀM XỬ LÝ TAB ---
         function openTab(evt, tabName) {
             let i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
