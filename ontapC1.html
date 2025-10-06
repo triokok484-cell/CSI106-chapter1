@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ôn tập CSI104 - Chương 1 (Bản Đầy Đủ)</title>
+    <title>Ôn tập CSI104 - Chương 1 (Bản Hoàn Chỉnh)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
             --incorrect-color: #dc3545;
             --background-color: #f0f2f5;
             --container-bg: #ffffff;
+            --highlight-bg: #fff3cd;
             --border-radius: 12px;
             --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
@@ -28,8 +29,10 @@
             body { background-color: var(--container-bg); }
             .container { margin: 0; padding: 1rem; box-shadow: none; border-radius: 0; }
         }
+        
+        mark { background-color: var(--highlight-bg); color: var(--text-color); padding: 2px 4px; border-radius: 4px; }
 
-        #language-toggle { position: absolute; top: 15px; right: 15px; display: flex; gap: 5px; }
+        #language-toggle { position: absolute; top: 15px; right: 15px; display: flex; gap: 5px; z-index: 10; }
         .lang-btn { font-size: 14px; padding: 6px 10px; background-color: #e9ecef; color: var(--text-color); border: 1px solid #dee2e6; cursor: pointer; border-radius: 6px; }
         .lang-btn.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
         
@@ -69,7 +72,7 @@
         #feedback-text { font-size: 1.2rem; font-weight: 700; }
         #feedback-text.correct { color: var(--correct-color); }
         #feedback-text.incorrect { color: var(--incorrect-color); }
-        #memory-tip { margin-top: 10px; font-size: 0.95rem; background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 12px; border-radius: 8px; }
+        #memory-tip { margin-top: 10px; font-size: 0.95rem; background-color: var(--highlight-bg); border-left: 5px solid #ffeeba; padding: 12px; border-radius: 8px; }
         
         #navigation-container { text-align: right; margin-top: 1rem; }
         #result-screen { text-align: center; }
@@ -87,6 +90,10 @@
         .theory-content { line-height: 1.7; padding: 0 10px; }
         .theory-content h3 { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 20px; }
         .theory-content ul { list-style-position: inside; padding-left: 0; }
+
+        #core-concepts { border-top: 2px solid #dee2e6; margin-top: 30px; padding-top: 20px; }
+        #core-concepts ul { list-style-type: '✔ '; }
+
     </style>
 </head>
 <body>
@@ -147,34 +154,43 @@
                 <h3 data-key="theory_h3_1">1. Hai Mô hình Nền tảng của Máy tính</h3>
                 <p><strong data-key="theory_turing_model_title">Mô hình Turing (Alan Turing, 1936):</strong></p>
                 <ul>
-                    <li data-key="theory_turing_1">Định nghĩa máy tính là một "<strong>bộ xử lý dữ liệu có thể lập trình được</strong>".</li>
+                    <li data-key="theory_turing_1">Định nghĩa máy tính là một "<mark><strong>bộ xử lý dữ liệu có thể lập trình được</strong></mark>".</li>
                     <li data-key="theory_turing_2">Công thức cốt lõi: <code>Input Data + Program → Computer → Output Data</code>.</li>
                     <li data-key="theory_turing_3">Nền tảng cho khái niệm <strong>máy tính đa năng</strong> (general-purpose).</li>
                 </ul>
                 <p><strong data-key="theory_vonneumann_model_title">Mô hình von Neumann (John von Neumann, ~1945):</strong></p>
                 <ul>
                     <li data-key="theory_vonneumann_1">Kiến trúc thực tế của máy tính hiện đại.</li>
-                    <li data-key="theory_vonneumann_2">Đột phá: "<strong>Khái niệm chương trình được lưu trữ</strong>" (Stored-Program Concept) - cả chương trình và dữ liệu đều được lưu trong bộ nhớ dưới dạng nhị phân.</li>
+                    <li data-key="theory_vonneumann_2">Đột phá lớn nhất: "<mark><strong>Khái niệm chương trình được lưu trữ</strong></mark>" (Stored-Program Concept) - cả chương trình và dữ liệu đều được lưu trong bộ nhớ dưới dạng nhị phân.</li>
                     <li data-key="theory_vonneumann_3">4 khối chức năng: <strong>Bộ nhớ (Memory)</strong>, <strong>Đơn vị số học và logic (ALU)</strong>, <strong>Đơn vị điều khiển (Control Unit)</strong>, và <strong>Thiết bị vào/ra (I/O)</strong>.</li>
                 </ul>
 
                 <h3 data-key="theory_h3_2">2. Ba Thành phần Cấu thành Máy tính</h3>
                 <ul>
                     <li data-key="theory_comp_1"><strong>Phần cứng (Hardware):</strong> Các thành phần vật lý (CPU, RAM, ổ cứng).</li>
-                    <li data-key="theory_comp_2"><strong>Dữ liệu (Data):</strong> Thông tin thô, được lưu trữ dưới dạng <strong>nhị phân</strong> (bit 0 và 1).</li>
-                    <li data-key="theory_comp_3"><strong>Phần mềm (Software):</strong> Tập hợp các chỉ thị (chương trình) để hướng dẫn phần cứng xử lý dữ liệu.</li>
+                    <li data-key="theory_comp_2"><strong>Dữ liệu (Data):</strong> Thông tin thô, được lưu trữ dưới dạng <mark><strong>nhị phân</strong></mark> (bit 0 và 1).</li>
+                    <li data-key="theory_comp_3"><strong>Phần mềm (Software):</strong> Tập hợp các chỉ thị (chương trình) để hướng dẫn phần cứng xử lý dữ liệu, được xây dựng từ các <mark><strong>thuật toán</strong></mark>.</li>
                 </ul>
 
                 <h3 data-key="theory_h3_3">3. Lịch sử Phát triển của Máy tính</h3>
                 <ul>
                     <li data-key="theory_hist_1"><strong>Giai đoạn máy cơ khí (Trước 1930):</strong> Pascaline, <strong>Analytical Engine</strong> (Charles Babbage).</li>
-                    <li data-key="theory_hist_2"><strong>Giai đoạn khai sinh máy tính điện tử (1930 - 1950):</strong> Sử dụng <strong>bóng đèn chân không</strong> (vacuum tubes), lập trình bằng tay (ENIAC). EDVAC là máy tính đầu tiên theo kiến trúc von Neumann.</li>
-                    <li data-key="theory_hist_3"><strong>Thế hệ 1 (1950-1959):</strong> Bóng đèn chân không.</li>
-                    <li data-key="theory_hist_4"><strong>Thế hệ 2 (1959-1965):</strong> <strong>Bóng bán dẫn (Transistor)</strong> -> nhỏ, nhanh, rẻ hơn.</li>
-                    <li data-key="theory_hist_5"><strong>Thế hệ 3 (1965-1975):</strong> <strong>Mạch tích hợp (Integrated Circuit - IC)</strong>.</li>
-                    <li data-key="theory_hist_6"><strong>Thế hệ 4 (1975-1985):</strong> <strong>Vi xử lý (Microprocessor)</strong> -> kỷ nguyên máy tính cá nhân (PC).</li>
-                    <li data-key="theory_hist_7"><strong>Thế hệ 5 (1985-nay):</strong> Xử lý song song, mạng máy tính, AI, thiết bị di động.</li>
+                    <li data-key="theory_hist_2"><strong>Giai đoạn khai sinh (1930 - 1950):</strong> Sử dụng <mark><strong>bóng đèn chân không</strong></mark>, lập trình bằng tay (<strong>ENIAC</strong>). <strong>EDVAC</strong> là máy tính đầu tiên theo kiến trúc von Neumann.</li>
+                    <li data-key="theory_hist_4"><strong>Thế hệ 2 (1959-1965):</strong> <mark><strong>Bóng bán dẫn (Transistor)</strong></mark> -> nhỏ, nhanh, rẻ hơn.</li>
+                    <li data-key="theory_hist_5"><strong>Thế hệ 3 (1965-1975):</strong> <mark><strong>Mạch tích hợp (IC)</strong></mark>.</li>
+                    <li data-key="theory_hist_6"><strong>Thế hệ 4 (1975-1985):</strong> <mark><strong>Vi xử lý (Microprocessor)</strong></mark> -> kỷ nguyên máy tính cá nhân (PC).</li>
+                    <li data-key="theory_hist_7"><strong>Thế hệ 5 (1985-nay):</strong> Xử lý song song, <mark><strong>mạng máy tính, AI</strong></mark>, thiết bị di động.</li>
                 </ul>
+
+                <div id="core-concepts">
+                    <h3 data-key="core_concepts_title">📝 Cốt Lõi Cần Nắm Vững</h3>
+                    <ul>
+                        <li data-key="core_1"><strong>Turing vs. Von Neumann:</strong> Turing định nghĩa <mark>cái gì</mark> một máy tính có thể làm (lý thuyết), Von Neumann định nghĩa <mark>làm thế nào</mark> để xây dựng nó (kiến trúc thực tế).</li>
+                        <li data-key="core_2"><strong>Khái niệm VÀNG:</strong> "Chương trình được lưu trữ" của Von Neumann là ý tưởng quan trọng nhất, cho phép máy tính trở nên linh hoạt, đa năng.</li>
+                        <li data-key="core_3"><strong>Bộ ba bất biến:</strong> Máy tính luôn gồm 3 thứ: <strong>Phần cứng</strong> (thể xác), <strong>Phần mềm</strong> (linh hồn), và <strong>Dữ liệu</strong> (nguyên liệu ở dạng nhị phân).</li>
+                        <li data-key="core_4"><strong>Con đường tiến hóa:</strong> Lịch sử máy tính là lịch sử của sự thu nhỏ và tăng tốc, qua các công nghệ: <mark>Bóng đèn chân không → Bóng bán dẫn → Mạch tích hợp (IC) → Vi xử lý</mark>.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -182,7 +198,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
     
-            // --- CƠ SỞ DỮ LIỆU SONG NGỮ ---
             const translations = {
                 vi: {
                     header_title: "Ôn tập CSI104 - Chương 1",
@@ -207,25 +222,29 @@
                     theory_title: "Tóm tắt Lý thuyết Chương 1",
                     theory_h3_1: "1. Hai Mô hình Nền tảng của Máy tính",
                     theory_turing_model_title: "Mô hình Turing (Alan Turing, 1936):",
-                    theory_turing_1: 'Định nghĩa máy tính là một "<strong>bộ xử lý dữ liệu có thể lập trình được</strong>".',
+                    theory_turing_1: 'Định nghĩa máy tính là một "<mark><strong>bộ xử lý dữ liệu có thể lập trình được</strong></mark>".',
                     theory_turing_2: "Công thức cốt lõi: <code>Input Data + Program → Computer → Output Data</code>.",
                     theory_turing_3: "Nền tảng cho khái niệm <strong>máy tính đa năng</strong> (general-purpose).",
                     theory_vonneumann_model_title: "Mô hình von Neumann (John von Neumann, ~1945):",
                     theory_vonneumann_1: "Kiến trúc thực tế của máy tính hiện đại.",
-                    theory_vonneumann_2: 'Đột phá: "<strong>Khái niệm chương trình được lưu trữ</strong>" (Stored-Program Concept) - cả chương trình và dữ liệu đều được lưu trong bộ nhớ dưới dạng nhị phân.',
+                    theory_vonneumann_2: 'Đột phá lớn nhất: "<mark><strong>Khái niệm chương trình được lưu trữ</strong></mark>" (Stored-Program Concept) - cả chương trình và dữ liệu đều được lưu trong bộ nhớ dưới dạng nhị phân.',
                     theory_vonneumann_3: "4 khối chức năng: <strong>Bộ nhớ (Memory)</strong>, <strong>Đơn vị số học và logic (ALU)</strong>, <strong>Đơn vị điều khiển (Control Unit)</strong>, và <strong>Thiết bị vào/ra (I/O)</strong>.",
                     theory_h3_2: "2. Ba Thành phần Cấu thành Máy tính",
                     theory_comp_1: "<strong>Phần cứng (Hardware):</strong> Các thành phần vật lý (CPU, RAM, ổ cứng).",
-                    theory_comp_2: "<strong>Dữ liệu (Data):</strong> Thông tin thô, được lưu trữ dưới dạng <strong>nhị phân</strong> (bit 0 và 1).",
-                    theory_comp_3: "<strong>Phần mềm (Software):</strong> Tập hợp các chỉ thị (chương trình) để hướng dẫn phần cứng xử lý dữ liệu.",
+                    theory_comp_2: "<strong>Dữ liệu (Data):</strong> Thông tin thô, được lưu trữ dưới dạng <mark><strong>nhị phân</strong></mark> (bit 0 và 1).",
+                    theory_comp_3: "<strong>Phần mềm (Software):</strong> Tập hợp các chỉ thị (chương trình) để hướng dẫn phần cứng xử lý dữ liệu, được xây dựng từ các <mark><strong>thuật toán</strong></mark>.",
                     theory_h3_3: "3. Lịch sử Phát triển của Máy tính",
                     theory_hist_1: "<strong>Giai đoạn máy cơ khí (Trước 1930):</strong> Pascaline, <strong>Analytical Engine</strong> (Charles Babbage).",
-                    theory_hist_2: "<strong>Giai đoạn khai sinh máy tính điện tử (1930 - 1950):</strong> Sử dụng <strong>bóng đèn chân không</strong> (vacuum tubes), lập trình bằng tay (ENIAC). EDVAC là máy tính đầu tiên theo kiến trúc von Neumann.",
-                    theory_hist_3: "<strong>Thế hệ 1 (1950-1959):</strong> Bóng đèn chân không.",
-                    theory_hist_4: "<strong>Thế hệ 2 (1959-1965):</strong> <strong>Bóng bán dẫn (Transistor)</strong> -> nhỏ, nhanh, rẻ hơn.",
-                    theory_hist_5: "<strong>Thế hệ 3 (1965-1975):</strong> <strong>Mạch tích hợp (Integrated Circuit - IC)</strong>.",
-                    theory_hist_6: "<strong>Thế hệ 4 (1975-1985):</strong> <strong>Vi xử lý (Microprocessor)</strong> -> kỷ nguyên máy tính cá nhân (PC).",
-                    theory_hist_7: "<strong>Thế hệ 5 (1985-nay):</strong> Xử lý song song, mạng máy tính, AI, thiết bị di động.",
+                    theory_hist_2: "<strong>Giai đoạn khai sinh (1930 - 1950):</strong> Sử dụng <mark><strong>bóng đèn chân không</strong></mark>, lập trình bằng tay (<strong>ENIAC</strong>). <strong>EDVAC</strong> là máy tính đầu tiên theo kiến trúc von Neumann.",
+                    theory_hist_4: "<strong>Thế hệ 2 (1959-1965):</strong> <mark><strong>Bóng bán dẫn (Transistor)</strong></mark> -> nhỏ, nhanh, rẻ hơn.",
+                    theory_hist_5: "<strong>Thế hệ 3 (1965-1975):</strong> <mark><strong>Mạch tích hợp (Integrated Circuit - IC)</strong></mark>.",
+                    theory_hist_6: "<strong>Thế hệ 4 (1975-1985):</strong> <mark><strong>Vi xử lý (Microprocessor)</strong></mark> -> kỷ nguyên máy tính cá nhân (PC).",
+                    theory_hist_7: "<strong>Thế hệ 5 (1985-nay):</strong> Xử lý song song, <mark><strong>mạng máy tính, AI</strong></mark>, thiết bị di động.",
+                    core_concepts_title: "📝 Cốt Lõi Cần Nắm Vững",
+                    core_1: "<strong>Turing vs. Von Neumann:</strong> Turing định nghĩa <mark>cái gì</mark> một máy tính có thể làm (lý thuyết), Von Neumann định nghĩa <mark>làm thế nào</mark> để xây dựng nó (kiến trúc thực tế).",
+                    core_2: '<strong>Khái niệm VÀNG:</strong> "Chương trình được lưu trữ" của Von Neumann là ý tưởng quan trọng nhất, cho phép máy tính trở nên linh hoạt, đa năng.',
+                    core_3: "<strong>Bộ ba bất biến:</strong> Máy tính luôn gồm 3 thứ: <strong>Phần cứng</strong> (thể xác), <strong>Phần mềm</strong> (linh hồn), và <strong>Dữ liệu</strong> (nguyên liệu ở dạng nhị phân).",
+                    core_4: "<strong>Con đường tiến hóa:</strong> Lịch sử máy tính là lịch sử của sự thu nhỏ và tăng tốc, qua các công nghệ: <mark>Bóng đèn chân không → Bóng bán dẫn → Mạch tích hợp (IC) → Vi xử lý</mark>.",
                 },
                 en: {
                     header_title: "CSI104 Review - Chapter 1",
@@ -250,29 +269,32 @@
                     theory_title: "Chapter 1 Theory Summary",
                     theory_h3_1: "1. Two Foundational Computer Models",
                     theory_turing_model_title: "Turing Model (Alan Turing, 1936):",
-                    theory_turing_1: 'Defines a computer as a "<strong>Programmable Data Processor</strong>".',
+                    theory_turing_1: 'Defines a computer as a "<mark><strong>Programmable Data Processor</strong></mark>".',
                     theory_turing_2: "Core formula: <code>Input Data + Program → Computer → Output Data</code>.",
                     theory_turing_3: "Foundation for the <strong>general-purpose computer</strong> concept.",
                     theory_vonneumann_model_title: "Von Neumann Model (John von Neumann, ~1945):",
                     theory_vonneumann_1: "Practical architecture for modern computers.",
-                    theory_vonneumann_2: 'Breakthrough: "<strong>Stored-Program Concept</strong>" - both program and data are stored in memory as binary.',
+                    theory_vonneumann_2: 'Biggest breakthrough: "<mark><strong>Stored-Program Concept</strong></mark>" - both program and data are stored in memory as binary.',
                     theory_vonneumann_3: "4 functional units: <strong>Memory</strong>, <strong>Arithmetic Logic Unit (ALU)</strong>, <strong>Control Unit</strong>, and <strong>Input/Output (I/O)</strong>.",
                     theory_h3_2: "2. Three Components of a Computer",
                     theory_comp_1: "<strong>Hardware:</strong> Physical components (CPU, RAM, hard drive).",
-                    theory_comp_2: "<strong>Data:</strong> Raw information, stored in <strong>binary</strong> format (bits 0 and 1).",
-                    theory_comp_3: "<strong>Software:</strong> A set of instructions (a program) that directs the hardware to process data.",
+                    theory_comp_2: "<strong>Data:</strong> Raw information, stored in <mark><strong>binary</strong></mark> format (bits 0 and 1).",
+                    theory_comp_3: "<strong>Software:</strong> A set of instructions (a program) to direct hardware, built from <mark><strong>algorithms</strong></mark>.",
                     theory_h3_3: "3. History of Computer Development",
                     theory_hist_1: "<strong>Mechanical Era (Before 1930):</strong> Pascaline, <strong>Analytical Engine</strong> (Charles Babbage).",
-                    theory_hist_2: "<strong>Birth of Electronic Computers (1930 - 1950):</strong> Used <strong>vacuum tubes</strong>, manually programmed (ENIAC). EDVAC was the first von Neumann architecture computer.",
-                    theory_hist_3: "<strong>1st Generation (1950-1959):</strong> Vacuum tubes.",
-                    theory_hist_4: "<strong>2nd Generation (1959-1965):</strong> <strong>Transistor</strong> -> smaller, faster, cheaper.",
-                    theory_hist_5: "<strong>3rd Generation (1965-1975):</strong> <strong>Integrated Circuit (IC)</strong>.",
-                    theory_hist_6: "<strong>4th Generation (1975-1985):</strong> <strong>Microprocessor</strong> -> personal computer (PC) era.",
-                    theory_hist_7: "<strong>5th Generation (1985-present):</strong> Parallel processing, computer networks, AI, mobile devices.",
+                    theory_hist_2: "<strong>The Dawn of Electronic Era (1930 - 1950):</strong> Used <mark><strong>vacuum tubes</strong></mark>, manual programming (<strong>ENIAC</strong>). <strong>EDVAC</strong> was the first von Neumann architecture computer.",
+                    theory_hist_4: "<strong>2nd Generation (1959-1965):</strong> <mark><strong>Transistor</strong></mark> -> smaller, faster, cheaper.",
+                    theory_hist_5: "<strong>3rd Generation (1965-1975):</strong> <mark><strong>Integrated Circuit (IC)</strong></mark>.",
+                    theory_hist_6: "<strong>4th Generation (1975-1985):</strong> <mark><strong>Microprocessor</strong></mark> -> PC era.",
+                    theory_hist_7: "<strong>5th Generation (1985-present):</strong> Parallel processing, <mark><strong>computer networks, AI</strong></mark>, mobile devices.",
+                    core_concepts_title: "📝 Core Concepts to Master",
+                    core_1: "<strong>Turing vs. Von Neumann:</strong> Turing defines <mark>what</mark> a computer can do (theory), Von Neumann defines <mark>how</mark> to build it (practical architecture).",
+                    core_2: '<strong>The GOLDEN Concept:</strong> Von Neumann\'s "Stored Program" is the most critical idea, allowing computers to be flexible and general-purpose.',
+                    core_3: "<strong>The Unchanging Trinity:</strong> A computer always consists of 3 things: <strong>Hardware</strong> (the body), <strong>Software</strong> (the soul), and <strong>Data</strong> (the material, in binary).",
+                    core_4: "<strong>The Path of Evolution:</strong> Computer history is the history of miniaturization and acceleration, through these technologies: <mark>Vacuum Tube → Transistor → Integrated Circuit (IC) → Microprocessor</mark>.",
                 }
             };
-
-            // --- NGÂN HÀNG 100 CÂU HỎI SONG NGỮ (BẢN ĐẦY ĐỦ) ---
+            
             const allQuestions = [
                 // Phần 1: Mô hình Turing (10 câu)
                 {
@@ -1171,13 +1193,13 @@
                 },
                 {
                     question_vi: "Cái nào sau đây là một ví dụ về lĩnh vực hệ thống (Systems Area) của khoa học máy tính?",
-                    options_vi: ["Cơ sở dữ liệu", "Đồ họa máy tính", "Trí tuệ nhân tạo", "Thiết kế thuật toán"],
-                    answer_vi: "Thiết kế thuật toán",
-                    tip_vi: "Lĩnh vực Hệ thống bao gồm các chủ đề như kiến trúc máy tính, hệ điều hành, mạng. Thiết kế thuật toán thuộc lĩnh vực Lý thuyết.",
+                    options_vi: ["Cơ sở dữ liệu", "Đồ họa máy tính", "Trí tuệ nhân tạo", "Hệ điều hành"],
+                    answer_vi: "Hệ điều hành",
+                    tip_vi: "Lĩnh vực Hệ thống bao gồm các chủ đề như kiến trúc máy tính, hệ điều hành, mạng. ",
                     question_en: "Which of the following is an example of a Systems Area of computer science?",
-                    options_en: ["Databases", "Computer Graphics", "Artificial Intelligence", "Algorithm Design"],
-                    answer_en: "Algorithm Design",
-                    tip_en: "The Systems area includes topics like architecture, OS, and networks. Algorithm design belongs to the Theoretical area."
+                    options_en: ["Databases", "Computer Graphics", "Artificial Intelligence", "Operating Systems"],
+                    answer_en: "Operating Systems",
+                    tip_en: "The Systems area includes topics like computer architecture, operating systems, and networks."
                 },
                 {
                     question_vi: "Điều gì xảy ra nếu cả chương trình và dữ liệu đầu vào đều không thay đổi?",
@@ -1281,34 +1303,27 @@
                 }
             ];
 
-            // --- THAM CHIẾU ĐẾN CÁC PHẦN TỬ HTML ---
             const startScreen = document.getElementById('start-screen');
             const quizScreen = document.getElementById('quiz-screen');
             const resultScreen = document.getElementById('result-screen');
-            
             const startBtn = document.getElementById('start-btn');
             const restartBtn = document.getElementById('restart-btn');
             const submitBtnQuiz = document.getElementById('submit-btn-quiz');
             const nextBtn = document.getElementById('next-btn');
             const numQuestionsInput = document.getElementById('num-questions-input');
-
             const progressText = document.getElementById('progress-text');
             const questionText = document.getElementById('question-text');
             const optionsContainer = document.getElementById('options-container');
             const feedbackText = document.getElementById('feedback-text');
             const memoryTip = document.getElementById('memory-tip');
-
             const scoreText = document.getElementById('score-text');
             const resultDetails = document.getElementById('result-details');
-            
             const langViBtn = document.getElementById('lang-vi');
             const langEnBtn = document.getElementById('lang-en');
 
-            // --- BIẾN TRẠNG THÁI ---
             let currentLanguage = 'vi';
             let quizQuestions, currentQuestionIndex, userAnswers;
-            
-            // --- CÁC HÀM XỬ LÝ SỰ KIỆN ---
+
             startBtn.addEventListener('click', startGame);
             restartBtn.addEventListener('click', () => {
                 resultScreen.classList.add('hidden');
@@ -1319,7 +1334,6 @@
             langViBtn.addEventListener('click', () => setLanguage('vi'));
             langEnBtn.addEventListener('click', () => setLanguage('en'));
 
-            // --- LOGIC CHÍNH ---
             function shuffle(array) {
                 for (let i = array.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -1330,34 +1344,26 @@
 
             function startGame() {
                 const numQuestions = parseInt(numQuestionsInput.value);
-                if (isNaN(numQuestions) || numQuestions < 1 || numQuestions > allQuestions.length) {
-                    alert(currentLanguage === 'vi' ? `Vui lòng nhập số câu từ 1 đến ${allQuestions.length}.` : `Please enter a number of questions between 1 and ${allQuestions.length}.`);
+                const maxQuestions = allQuestions.length;
+                if (isNaN(numQuestions) || numQuestions < 1 || numQuestions > maxQuestions) {
+                    alert(currentLanguage === 'vi' ? `Vui lòng nhập số câu từ 1 đến ${maxQuestions}.` : `Please enter a number of questions between 1 and ${maxQuestions}.`);
                     return;
                 }
-
                 startScreen.classList.add('hidden');
                 resultScreen.classList.add('hidden');
                 quizScreen.classList.remove('hidden');
-                
                 quizQuestions = shuffle([...allQuestions]).slice(0, numQuestions);
                 currentQuestionIndex = 0;
                 userAnswers = [];
-                
                 displayQuestion();
             }
 
             function displayQuestion() {
                 resetState();
                 const currentQuestion = quizQuestions[currentQuestionIndex];
-                
-                progressText.innerText = translations[currentLanguage].progress_text
-                    .replace('{current}', currentQuestionIndex + 1)
-                    .replace('{total}', quizQuestions.length);
-                
+                progressText.innerText = translations[currentLanguage].progress_text.replace('{current}', currentQuestionIndex + 1).replace('{total}', quizQuestions.length);
                 questionText.innerText = currentQuestion['question_' + currentLanguage];
-                
                 const shuffledOptions = shuffle([...currentQuestion['options_' + currentLanguage]]);
-                
                 shuffledOptions.forEach(option => {
                     const button = document.createElement('button');
                     button.innerText = option;
@@ -1382,29 +1388,28 @@
                 const selectedAnswer = selectedBtn.innerText;
                 const currentQuestion = quizQuestions[currentQuestionIndex];
                 const correctAnswer = currentQuestion['answer_' + currentLanguage];
-                
                 const isCorrect = selectedAnswer === correctAnswer;
-                
+
                 userAnswers.push({
                     questionData: currentQuestion,
                     userAnswer: selectedAnswer,
                     isCorrect: isCorrect
                 });
-                
+
                 feedbackText.innerText = isCorrect ? translations[currentLanguage].feedback_correct : translations[currentLanguage].feedback_incorrect;
                 feedbackText.className = isCorrect ? 'correct' : 'incorrect';
-                
+
                 if (!isCorrect) {
                     memoryTip.innerHTML = `<strong>${translations[currentLanguage].memory_tip_text}</strong> ${currentQuestion['tip_' + currentLanguage]}`;
                     memoryTip.classList.remove('hidden');
                 }
-                
+
                 Array.from(optionsContainer.children).forEach(button => {
                     if (button.innerText === correctAnswer) button.classList.add('correct');
                     else if (button === selectedBtn) button.classList.add('incorrect');
                     button.disabled = true;
                 });
-                
+
                 nextBtn.classList.remove('hidden');
                 if (currentQuestionIndex === quizQuestions.length - 1) {
                     nextBtn.innerText = translations[currentLanguage].finish_btn_text;
@@ -1429,18 +1434,14 @@
             }
 
             function renderResults() {
-                if (!userAnswers) return; // Guard clause
+                if (!userAnswers) return;
                 const correctAnswersCount = userAnswers.filter(answer => answer.isCorrect).length;
-                scoreText.innerText = translations[currentLanguage].score_text
-                    .replace('{score}', correctAnswersCount)
-                    .replace('{total}', userAnswers.length);
-                
+                scoreText.innerText = translations[currentLanguage].score_text.replace('{score}', correctAnswersCount).replace('{total}', userAnswers.length);
                 resultDetails.innerHTML = '';
                 userAnswers.forEach((answer, index) => {
                     const { questionData, userAnswer, isCorrect } = answer;
                     const resultItem = document.createElement('div');
                     resultItem.classList.add('result-item', isCorrect ? 'result-item-correct' : 'result-item-incorrect');
-                    
                     const correctAnswerText = questionData['answer_' + currentLanguage];
                     let answerHTML = `<p class="result-answer"><strong>${translations[currentLanguage].your_answer_text}</strong> ${userAnswer}</p>`;
                     if (!isCorrect) {
@@ -1476,55 +1477,55 @@
             }
 
             function rerenderQuizView() {
-                if(!quizQuestions || quizQuestions.length === 0) return;
+                if(!quizQuestions || quizQuestions.length === 0 || currentQuestionIndex >= quizQuestions.length) return;
                 
                 const currentQuestion = quizQuestions[currentQuestionIndex];
-                 progressText.innerText = translations[currentLanguage].progress_text
-                    .replace('{current}', currentQuestionIndex + 1)
-                    .replace('{total}', quizQuestions.length);
+                progressText.innerText = translations[currentLanguage].progress_text.replace('{current}', currentQuestionIndex + 1).replace('{total}', quizQuestions.length);
                 questionText.innerText = currentQuestion['question_' + currentLanguage];
 
                 const answerData = userAnswers[currentQuestionIndex];
                 const questionAnswered = !!answerData;
 
-                const newOptions = [...currentQuestion['options_' + currentLanguage]];
-                const correctAnswerText = currentQuestion['answer_' + currentLanguage];
-
-                optionsContainer.innerHTML = '';
-                shuffle(newOptions).forEach(opt => {
-                    const button = document.createElement('button');
-                    button.innerText = opt;
-                    button.classList.add('option-btn');
-                    
-                    if(questionAnswered) {
-                        button.disabled = true;
-                        if(opt === correctAnswerText) button.classList.add('correct');
-                        if(opt === answerData.userAnswer && !answerData.isCorrect) button.classList.add('incorrect');
-                    } else {
-                        button.addEventListener('click', selectAnswer);
-                    }
-                    optionsContainer.appendChild(button);
-                });
-
                 if (questionAnswered) {
+                    const correctAnswerText = currentQuestion['answer_' + currentLanguage];
+                    optionsContainer.innerHTML = ''; // Xóa các nút cũ
+                    const optionsInCurrentLang = shuffle([...currentQuestion['options_' + currentLanguage]]);
+                    
+                    optionsInCurrentLang.forEach(opt => {
+                        const button = document.createElement('button');
+                        button.innerText = opt;
+                        button.classList.add('option-btn');
+                        button.disabled = true;
+                        
+                        if (opt === correctAnswerText) {
+                            button.classList.add('correct');
+                        }
+                        // Dịch câu trả lời của người dùng để so sánh
+                        // Logic này phức tạp, cách đơn giản là tìm index của câu trả lời gốc
+                        let originalAnswerIndex = currentQuestion['options_vi'].indexOf(answerData.userAnswer);
+                        if(originalAnswerIndex === -1) {
+                           originalAnswerIndex = currentQuestion['options_en'].indexOf(answerData.userAnswer);
+                        }
+                        const userAnswerInCurrentLang = currentQuestion['options_' + currentLanguage][originalAnswerIndex];
+
+                        if (opt === userAnswerInCurrentLang && !answerData.isCorrect) {
+                           button.classList.add('incorrect');
+                        }
+
+                        optionsContainer.appendChild(button);
+                    });
+
                     feedbackText.innerText = answerData.isCorrect ? translations[currentLanguage].feedback_correct : translations[currentLanguage].feedback_incorrect;
-                    feedbackText.className = answerData.isCorrect ? 'correct' : 'incorrect';
                     if (!answerData.isCorrect) {
                         memoryTip.innerHTML = `<strong>${translations[currentLanguage].memory_tip_text}</strong> ${currentQuestion['tip_' + currentLanguage]}`;
-                        memoryTip.classList.remove('hidden');
                     }
-                    nextBtn.classList.remove('hidden');
                     if (currentQuestionIndex === quizQuestions.length - 1) {
                         nextBtn.innerText = translations[currentLanguage].finish_btn_text;
                     } else {
                         nextBtn.innerText = translations[currentLanguage].next_btn_text;
                     }
                 } else {
-                    resetState(); // handles hiding feedback etc.
-                    progressText.innerText = translations[currentLanguage].progress_text
-                        .replace('{current}', currentQuestionIndex + 1)
-                        .replace('{total}', quizQuestions.length);
-                    questionText.innerText = currentQuestion['question_' + currentLanguage];
+                    displayQuestion();
                 }
             }
 
