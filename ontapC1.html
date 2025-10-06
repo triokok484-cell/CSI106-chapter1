@@ -93,7 +93,6 @@
 
         #core-concepts { border-top: 2px solid #dee2e6; margin-top: 30px; padding-top: 20px; }
         #core-concepts ul { list-style-type: '✔ '; }
-
     </style>
 </head>
 <body>
@@ -177,7 +176,7 @@
                     <li data-key="theory_hist_1"><strong>Giai đoạn máy cơ khí (Trước 1930):</strong> Pascaline, <strong>Analytical Engine</strong> (Charles Babbage).</li>
                     <li data-key="theory_hist_2"><strong>Giai đoạn khai sinh (1930 - 1950):</strong> Sử dụng <mark><strong>bóng đèn chân không</strong></mark>, lập trình bằng tay (<strong>ENIAC</strong>). <strong>EDVAC</strong> là máy tính đầu tiên theo kiến trúc von Neumann.</li>
                     <li data-key="theory_hist_4"><strong>Thế hệ 2 (1959-1965):</strong> <mark><strong>Bóng bán dẫn (Transistor)</strong></mark> -> nhỏ, nhanh, rẻ hơn.</li>
-                    <li data-key="theory_hist_5"><strong>Thế hệ 3 (1965-1975):</strong> <mark><strong>Mạch tích hợp (IC)</strong></mark>.</li>
+                    <li data-key="theory_hist_5"><strong>Thế hệ 3 (1965-1975):</strong> <mark><strong>Mạch tích hợp (Integrated Circuit - IC)</strong></mark>.</li>
                     <li data-key="theory_hist_6"><strong>Thế hệ 4 (1975-1985):</strong> <mark><strong>Vi xử lý (Microprocessor)</strong></mark> -> kỷ nguyên máy tính cá nhân (PC).</li>
                     <li data-key="theory_hist_7"><strong>Thế hệ 5 (1985-nay):</strong> Xử lý song song, <mark><strong>mạng máy tính, AI</strong></mark>, thiết bị di động.</li>
                 </ul>
@@ -218,6 +217,7 @@
                     score_text: "Bạn đã trả lời đúng {score} / {total} câu",
                     your_answer_text: "Câu trả lời của bạn:",
                     correct_answer_text: "Đáp án đúng:",
+                    unanswered_text: "[Chưa trả lời]",
                     memory_tip_text: "💡 Mẹo ghi nhớ:",
                     theory_title: "Tóm tắt Lý thuyết Chương 1",
                     theory_h3_1: "1. Hai Mô hình Nền tảng của Máy tính",
@@ -265,6 +265,7 @@
                     score_text: "You answered {score} / {total} questions correctly",
                     your_answer_text: "Your answer:",
                     correct_answer_text: "Correct answer:",
+                    unanswered_text: "[Unanswered]",
                     memory_tip_text: "💡 Memory Tip:",
                     theory_title: "Chapter 1 Theory Summary",
                     theory_h3_1: "1. Two Foundational Computer Models",
@@ -1433,24 +1434,47 @@
                 renderResults();
             }
 
+            // --- FUNCTION ĐÃ ĐƯỢC CẬP NHẬT LOGIC THEO YÊU CẦU ---
             function renderResults() {
-                if (!userAnswers) return;
+                if (!quizQuestions) return; 
+                
+                const totalQuestionsInQuiz = quizQuestions.length;
                 const correctAnswersCount = userAnswers.filter(answer => answer.isCorrect).length;
-                scoreText.innerText = translations[currentLanguage].score_text.replace('{score}', correctAnswersCount).replace('{total}', userAnswers.length);
+                
+                scoreText.innerText = translations[currentLanguage].score_text
+                    .replace('{score}', correctAnswersCount)
+                    .replace('{total}', totalQuestionsInQuiz);
+                
                 resultDetails.innerHTML = '';
-                userAnswers.forEach((answer, index) => {
-                    const { questionData, userAnswer, isCorrect } = answer;
+                
+                quizQuestions.forEach((questionData, index) => {
                     const resultItem = document.createElement('div');
-                    resultItem.classList.add('result-item', isCorrect ? 'result-item-correct' : 'result-item-incorrect');
+                    const answeredData = userAnswers.find(ua => ua.questionData === questionData);
                     const correctAnswerText = questionData['answer_' + currentLanguage];
-                    let answerHTML = `<p class="result-answer"><strong>${translations[currentLanguage].your_answer_text}</strong> ${userAnswer}</p>`;
-                    if (!isCorrect) {
+                    let answerHTML;
+
+                    if (answeredData) {
+                        // Trường hợp câu hỏi đã được trả lời
+                        resultItem.classList.add('result-item', answeredData.isCorrect ? 'result-item-correct' : 'result-item-incorrect');
+                        if(answeredData.isCorrect) {
+                            answerHTML = `<p class="result-answer"><strong>${translations[currentLanguage].your_answer_text}</strong> ${answeredData.userAnswer}</p>`;
+                        } else {
+                            answerHTML = `
+                                <p class="result-answer"><strong>${translations[currentLanguage].your_answer_text}</strong> <span class="incorrect-answer-text">${answeredData.userAnswer}</span></p>
+                                <p class="result-answer"><strong>${translations[currentLanguage].correct_answer_text}</strong> <span class="correct-answer-text">${correctAnswerText}</span></p>
+                                <p id="memory-tip"><strong>${translations[currentLanguage].memory_tip_text}</strong> ${questionData['tip_' + currentLanguage]}</p>
+                            `;
+                        }
+                    } else {
+                        // Trường hợp câu hỏi chưa được trả lời -> Chấm là SAI
+                        resultItem.classList.add('result-item', 'result-item-incorrect');
                         answerHTML = `
-                            <p class="result-answer"><strong>${translations[currentLanguage].your_answer_text}</strong> <span class="incorrect-answer-text">${userAnswer}</span></p>
+                            <p class="result-answer"><strong>${translations[currentLanguage].your_answer_text}</strong> <span class="incorrect-answer-text">${translations[currentLanguage].unanswered_text}</span></p>
                             <p class="result-answer"><strong>${translations[currentLanguage].correct_answer_text}</strong> <span class="correct-answer-text">${correctAnswerText}</span></p>
                             <p id="memory-tip"><strong>${translations[currentLanguage].memory_tip_text}</strong> ${questionData['tip_' + currentLanguage]}</p>
                         `;
                     }
+                    
                     resultItem.innerHTML = `<p class="result-question">${index + 1}. ${questionData['question_' + currentLanguage]}</p>${answerHTML}`;
                     resultDetails.appendChild(resultItem);
                 });
@@ -1486,50 +1510,48 @@
                 const answerData = userAnswers[currentQuestionIndex];
                 const questionAnswered = !!answerData;
 
-                if (questionAnswered) {
-                    const correctAnswerText = currentQuestion['answer_' + currentLanguage];
-                    optionsContainer.innerHTML = ''; // Xóa các nút cũ
-                    const optionsInCurrentLang = shuffle([...currentQuestion['options_' + currentLanguage]]);
-                    
-                    optionsInCurrentLang.forEach(opt => {
-                        const button = document.createElement('button');
-                        button.innerText = opt;
-                        button.classList.add('option-btn');
+                optionsContainer.innerHTML = '';
+                const optionsInCurrentLang = shuffle([...currentQuestion['options_' + currentLanguage]]);
+                optionsInCurrentLang.forEach(opt => {
+                    const button = document.createElement('button');
+                    button.innerText = opt;
+                    button.classList.add('option-btn');
+                    if (questionAnswered) {
                         button.disabled = true;
-                        
+                        const correctAnswerText = currentQuestion['answer_' + currentLanguage];
                         if (opt === correctAnswerText) {
                             button.classList.add('correct');
                         }
-                        // Dịch câu trả lời của người dùng để so sánh
-                        // Logic này phức tạp, cách đơn giản là tìm index của câu trả lời gốc
                         let originalAnswerIndex = currentQuestion['options_vi'].indexOf(answerData.userAnswer);
-                        if(originalAnswerIndex === -1) {
-                           originalAnswerIndex = currentQuestion['options_en'].indexOf(answerData.userAnswer);
+                        if (originalAnswerIndex === -1) {
+                            originalAnswerIndex = currentQuestion['options_en'].indexOf(answerData.userAnswer);
                         }
-                        const userAnswerInCurrentLang = currentQuestion['options_' + currentLanguage][originalAnswerIndex];
-
-                        if (opt === userAnswerInCurrentLang && !answerData.isCorrect) {
-                           button.classList.add('incorrect');
+                        if (originalAnswerIndex > -1) {
+                             const userAnswerInCurrentLang = currentQuestion['options_' + currentLanguage][originalAnswerIndex];
+                             if (opt === userAnswerInCurrentLang && !answerData.isCorrect) {
+                                button.classList.add('incorrect');
+                             }
                         }
+                    } else {
+                        button.addEventListener('click', selectAnswer);
+                    }
+                    optionsContainer.appendChild(button);
+                });
 
-                        optionsContainer.appendChild(button);
-                    });
-
+                if (questionAnswered) {
                     feedbackText.innerText = answerData.isCorrect ? translations[currentLanguage].feedback_correct : translations[currentLanguage].feedback_incorrect;
                     if (!answerData.isCorrect) {
                         memoryTip.innerHTML = `<strong>${translations[currentLanguage].memory_tip_text}</strong> ${currentQuestion['tip_' + currentLanguage]}`;
                     }
+                    nextBtn.classList.remove('hidden');
                     if (currentQuestionIndex === quizQuestions.length - 1) {
                         nextBtn.innerText = translations[currentLanguage].finish_btn_text;
                     } else {
                         nextBtn.innerText = translations[currentLanguage].next_btn_text;
                     }
-                } else {
-                    displayQuestion();
                 }
             }
-
-            setLanguage('vi'); 
+            setLanguage('vi');
         });
 
         function openTab(evt, tabName) {
